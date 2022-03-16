@@ -30,6 +30,7 @@
 \RequirePackage{algpseudocode}
 \RequirePackage{makecell}
 \RequirePackage{xcolor}
+\RequirePackage{ifplatform}
 % Listing lstlisting -------
 \definecolor{commentColor}{RGB}{53,129,34}
 \definecolor{keywordColor}{RGB}{172, 62, 158}
@@ -216,10 +217,22 @@ tabsize=4
 }
 % Listing over --------
 
-\setCJKmainfont[AutoFakeBold=true]{SimSun}
-\newCJKfontfamily{\heiti}{SimHei}
-\newfontfamily{\heiti@letter}{SimHei}
-\setallmainfonts{Times New Roman}
+\ifwindows
+  \setCJKmainfont[AutoFakeBold=true]{SimSun}
+  \newCJKfontfamily{\heiti}{SimHei}
+  \newfontfamily{\heiti@letter}{SimHei}
+  \setallmainfonts{Times New Roman}
+\else
+  \setCJKmainfont[AutoFakeBold=true]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}{fzhei.ttf}
+  \newfontfamily{\heiti@letter}{fzhei.ttf}
+  \setallmainfonts[
+    AutoFakeBold=true,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+  ]{times.ttf}
+\fi
 
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
@@ -337,17 +350,17 @@ tabsize=4
 \titleformat{\chapter}[block]
   {\centering\fontsize{15pt}{15pt}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
 
-\titleformat{\section}[block]
+  \titleformat{\section}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\thesection}{7pt}{}
+  {\fontsize{14pt}{14pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}}{7pt}{}
 
 \titleformat{\subsection}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\thesubsection}{7pt}{}
+  {\fontsize{14pt}{14pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}.\selectfont\bfseries\arabic{subsection}}{7pt}{}
 
 \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont\strong}
-  {\thesubsubsection}{6pt}{}
+  {\fontsize{12pt}{12pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}.\selectfont\bfseries\arabic{subsection}.\selectfont\bfseries\arabic{subsubsection}}{6pt}{}
 
 \RequirePackage[hang, perpage]{footmisc}
 \addtolength{\footnotesep}{0pt}
