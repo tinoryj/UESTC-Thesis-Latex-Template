@@ -45,7 +45,7 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
-\newfontfamily\codefont{Cascadia Code}
+\newfontfamily\codefont{Times New Roman}
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
