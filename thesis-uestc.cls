@@ -45,7 +45,7 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
-\newfontfamily\codefont{Cascadia Code}
+\newfontfamily\codefont{Times New Roman}
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -531,6 +531,7 @@ tabsize=4
 \newcommand{\theClassificationNumber}{\chinesespace}
 \newcommand{\theClassifiedClass}{\chinesespace}
 \newcommand{\theUDCNumber}{\chinesespace}
+\newcommand{\theProfessionalDegreeArea}{\chinesespace}
 
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
@@ -576,6 +577,10 @@ tabsize=4
 
 \newcommand{\UDCNumber}[1]{
   \renewcommand{\theUDCNumber}{#1}
+}
+
+\newcommand{\ProfessionalDegreeArea}[1]{
+  \renewcommand{\theProfessionalDegreeArea}{#1}
 }
 
 \newcommand{\thedateoral}{}
@@ -948,13 +953,187 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
-      p{2.29in}}
+      p{4.35in}}
       答辩委员会主席 & \\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
-      p{5.03in}}
+      p{5.01in}}
+      评阅人 & \\
+    \cline{2-2}
+  \end{tabular}
+
+\vspace{0.54in}
+\noindent
+\hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
+
+\newpage
+\thispagestyle{empty}\null
+\par{\vspace{2.3cm}}
+\noindent
+\begin{minipage}[t][1.52cm][t]{\textwidth}
+  \fontsize{18pt}{20pt}\selectfont
+  \bfseries\centering\en@thetitle
+\end{minipage}
+\par{\vspace{6.3cm}}
+\noindent
+\begin{minipage}[t][1.52cm][t]{\textwidth}
+  \fontsize{15pt}{17pt}\selectfont
+  \centering\noindent
+  A \englishbooktitle{} Submitted to \\
+  University of Electronic Science and Technology of China
+\end{minipage}
+\par{\vspace{3.2cm}}
+\noindent
+\begin{tabular}{>{\fontsize{16pt}{16pt}\selectfont}r
+  >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
+  p{10.6cm}}
+  Discipline: & \multirow[t]{2}{*}{\en@themajor} \\
+\cline{2-2}
+& \\
+\cline{2-2}
+Student ID: & \thestudentnumber \\
+\cline{2-2}
+Author: & \en@theauthor \\
+\cline{2-2}
+Supervisor: & \en@theadvisor \\
+\cline{2-2}
+School: & \en@theschool \\
+\cline{2-2}
+\end{tabular}
+}
+
+
+\newcommand{\MakeCoverProMaster}{
+\thispagestyle{empty}
+\setlength{\extrarowheight}{9pt}
+\ifchinesebook{\pdfbookmark{封面}{cover}}{\pdfbookmark{Cover}{cover}}
+\begin{center}
+  \ifbachelor{\includegraphics{bachelor_font.pdf} \\}{
+    \fontsize{22pt}{22pt}\selectfont 电\hspace{0.5em}子\hspace{0.5em}科\hspace{0.5em}技%
+    \hspace{0.5em}大\hspace{0.5em}学 \\[7bp]}
+  \fontsize{12pt}{12pt}\selectfont UNIVERSITY OF ELECTRONIC SCIENCE
+    AND TECHNOLOGY OF CHINA \\[36bp]
+  \ifbachelor{\fontsize{42pt}{42pt}\selectfont{\bfseries\chinesebooktitle} \\[24bp]}{
+    \fontsize{42pt}{42pt}\selectfont\chinesebooktitle \\[24bp]}
+  \fontsize{16pt}{16pt}\selectfont
+    \textnormal{\MakeUppercase{\englishbooktitle}} \\[48bp]
+  \ifbachelor{
+    %\vspace{0.4cm}
+    \includegraphics[width=180bp]{logo.pdf} \\[40bp]
+  }{\includegraphics[width=180bp]{logo.pdf} \\[40bp]}
+  \begin{tabular}{lp{4.2in}}
+    \bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.2in}{
+        \centering
+          \bfseries\fontsize{18pt}{18pt}\selectfont
+          \zh@thetitle
+    } \\
+    \cline{2-2}
+            & \\
+    \cline{2-2}
+  \end{tabular}\hspace*{\fill} \\[\baselineskip]
+  \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
+      p{3.77in}p{15pt}}
+    专业学位类别 & \zh@themajor &\\
+    \cline{2-2}
+    学\chinesespace\chinesespace\chinesespace\chinesespace 号 & \thestudentnumber & \\
+    \cline{2-2}
+    作\hspace{0.66em}者\hspace{0.66em}姓\hspace{0.67em}名 & \zh@theauthor &\\
+    \cline{2-2}
+    指\hspace{0.66em}导\hspace{0.66em}老\hspace{0.67em}师 & \zh@theadvisor &\\
+    \cline{2-2}
+    学\chinesespace\chinesespace\chinesespace\chinesespace 院 & \zh@theschool &\\
+    \cline{2-2}
+  \end{tabular}
+\end{center}
+
+\ifbachelor{}{\thetitlepageforpromaster}
+
+\newpage
+\setcounter{page}{1}
+\setlength{\extrarowheight}{2pt}
+}
+
+
+\newcommand{\thetitlepageforpromaster}{
+  \newpage
+  \thispagestyle{empty}
+
+
+\noindent 分类号 \hspace{0.5em}\UnderlineCentered{2.5in}{3pt}{\theClassificationNumber} 密级 \UnderlineCentered{2.5in}{3pt}{\theClassifiedClass} \\[12bp]
+UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
+
+\begin{center}
+  \fontsize{36pt}{36pt}\selectfont{
+    学\chinesespace 位\chinesespace 论\chinesespace 文
+  } \\[48bp]
+
+  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@thetitle} \\
+  \vspace{-15pt}
+  \rule{5.9in}{.5pt} \\
+  \fontsize{12pt}{12pt}\selectfont（题名和副题名）\\[34bp]
+  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@theauthor} \\
+  \vspace{-15pt}
+  \rule{1.63in}{.5pt} \\
+  \fontsize{12pt}{12pt}\selectfont（作者姓名） \\[34bp]
+
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{16pt}{16pt}\selectfont}
+      p{4.45in}}
+      指导老师 & {\bfseries\zh@theadvisor} \\
+    \cline{2-2}
+      & {\bfseries 电子科技大学\chinesespace 成都} \\
+    \cline{2-2}
+    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
+  \end{tabular}  \\[36bp]
+\end{center}
+
+  \noindent
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{1.0in}
+      >{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{2.50in-2em}}
+      申请学位级别 & \chinesedegreename &
+      专业学位类别 & \zh@themajor \\
+    \cline{2-2}
+    \cline{4-4}
+  \end{tabular} \\
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{4.53in}}
+      专业学位领域 & \theProfessionalDegreeArea \\
+    \cline{2-2}
+  \end{tabular} \\
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{1.59in}
+      >{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{1.59in}}
+      提交论文日期 & \thedatesubmit &
+      论文答辩日期 & \thedateoral \\
+    \cline{2-2}
+    \cline{4-4}
+  \end{tabular} \\
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{4.02in}}
+      学位授予单位和日期 & 电子科技大学\chinesespace{} \thedateconfer \\
+    \cline{2-2}
+  \end{tabular} \\
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+      p{4.35in}}
+      答辩委员会主席 & \\
+    \cline{2-2}
+  \end{tabular} \\
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+      p{5.01in}}
       评阅人 & \\
     \cline{2-2}
   \end{tabular}

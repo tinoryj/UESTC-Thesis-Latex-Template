@@ -9,3 +9,9 @@ UESTC Thesis Latex Template
   ![UDC](pic/UDCID.png)
 
   * UDC编号查询：https://udcsummary.info/php/index.php?lang=chi&pr=Y
+* 修正英文封面中学号和姓名顺序错误的问题（对调）
+* 修正“答辩委员会主席”后下划线长度不足的问题
+* 增加专业硕士专用封面：
+  * 使用\MakeCoverProMaster指令替换\makecover即可
+  * 新增\ProfessionalDegreeArea{}用于设置“专业学位领域”，如下所示：
+  ![UDC](pic/promaster.png)
