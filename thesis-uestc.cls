@@ -44,7 +44,7 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
-\newfontfamily\codefont{Cascadia Code}
+\newfontfamily\codefont{Times New Roman}
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -77,16 +77,6 @@ literate={
     {<<}{{{\color{black}<<}}}1
     {>>}{{{\color{black}>>}}}1
     {*}{{{*}}}1
-    % {0}{{{\color{characterColor}0}}}1
-    % {1}{{{\color{characterColor}1}}}1
-    % {2}{{{\color{characterColor}2}}}1
-    % {3}{{{\color{characterColor}3}}}1
-    % {4}{{{\color{characterColor}4}}}1
-    % {5}{{{\color{characterColor}5}}}1
-    % {6}{{{\color{characterColor}6}}}1
-    % {7}{{{\color{characterColor}7}}}1
-    % {8}{{{\color{characterColor}8}}}1
-    % {9}{{{\color{characterColor}9}}}1
     },
 tabsize=4
 }
@@ -223,15 +213,21 @@ tabsize=4
   \newfontfamily{\heiti@letter}{SimHei}
   \setallmainfonts{Times New Roman}
 \else
+\ifmacosx
+  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
+  \newCJKfontfamily{\heiti}{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+  \setallmainfonts{Times New Roman}
+\else
   \setCJKmainfont[AutoFakeBold=true]{fzsong.ttf}
   \newCJKfontfamily{\heiti}{fzhei.ttf}
   \newfontfamily{\heiti@letter}{fzhei.ttf}
   \setallmainfonts[
-    AutoFakeBold=true,
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
   ]{times.ttf}
+\fi
 \fi
 
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
@@ -254,7 +250,7 @@ tabsize=4
 }
 
 \RequirePackage{indentfirst}
-%\RequirePackage{calc}
+\RequirePackage{calc}
 \RequirePackage{float}
 \RequirePackage{fancyvrb}
 \RequirePackage{fancyhdr}
