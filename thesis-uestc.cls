@@ -17,6 +17,7 @@
 \setlength{\cmidrulewidth}{0.5pt}
 
 \RequirePackage{setspace}
+\RequirePackage{adjustbox}
 \RequirePackage{multirow}
 \RequirePackage[tbtags]{amsmath}
 \RequirePackage{amssymb}
@@ -44,7 +45,7 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
-\newfontfamily\codefont{Times New Roman}
+\newfontfamily\codefont{Cascadia Code}
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -77,6 +78,16 @@ literate={
     {<<}{{{\color{black}<<}}}1
     {>>}{{{\color{black}>>}}}1
     {*}{{{*}}}1
+    % {0}{{{\color{characterColor}0}}}1
+    % {1}{{{\color{characterColor}1}}}1
+    % {2}{{{\color{characterColor}2}}}1
+    % {3}{{{\color{characterColor}3}}}1
+    % {4}{{{\color{characterColor}4}}}1
+    % {5}{{{\color{characterColor}5}}}1
+    % {6}{{{\color{characterColor}6}}}1
+    % {7}{{{\color{characterColor}7}}}1
+    % {8}{{{\color{characterColor}8}}}1
+    % {9}{{{\color{characterColor}9}}}1
     },
 tabsize=4
 }
@@ -250,7 +261,7 @@ tabsize=4
 }
 
 \RequirePackage{indentfirst}
-\RequirePackage{calc}
+%\RequirePackage{calc}
 \RequirePackage{float}
 \RequirePackage{fancyvrb}
 \RequirePackage{fancyhdr}
@@ -346,17 +357,17 @@ tabsize=4
 \titleformat{\chapter}[block]
   {\centering\fontsize{15pt}{15pt}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
 
-  \titleformat{\section}[block]
+\titleformat{\section}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\fontsize{14pt}{14pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}}{7pt}{}
+  {\thesection}{7pt}{}
 
 \titleformat{\subsection}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\fontsize{14pt}{14pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}.\selectfont\bfseries\arabic{subsection}}{7pt}{}
+  {\thesubsection}{7pt}{}
 
 \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont\strong}
-  {\fontsize{12pt}{12pt}\selectfont\bfseries\arabic{chapter}.\selectfont\bfseries\arabic{section}.\selectfont\bfseries\arabic{subsection}.\selectfont\bfseries\arabic{subsubsection}}{6pt}{}
+  {\thesubsubsection}{6pt}{}
 
 \RequirePackage[hang, perpage]{footmisc}
 \addtolength{\footnotesep}{0pt}
@@ -517,6 +528,9 @@ tabsize=4
 \newcommand{\en@theadvisor}{\chinesespace}
 
 \newcommand{\thestudentnumber}{\chinesespace}
+\newcommand{\theClassificationNumber}{\chinesespace}
+\newcommand{\theClassifiedClass}{\chinesespace}
+\newcommand{\theUDCNumber}{\chinesespace}
 
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
@@ -550,6 +564,18 @@ tabsize=4
 
 \newcommand{\studentnumber}[1]{
   \renewcommand{\thestudentnumber}{#1}
+}
+
+\newcommand{\ClassificationNumber}[1]{
+  \renewcommand{\theClassificationNumber}{#1}
+}
+
+\newcommand{\ClassifiedClass}[1]{
+  \renewcommand{\theClassifiedClass}{#1}
+}
+
+\newcommand{\UDCNumber}[1]{
+  \renewcommand{\theUDCNumber}{#1}
 }
 
 \newcommand{\thedateoral}{}
@@ -842,12 +868,29 @@ tabsize=4
 \setlength{\extrarowheight}{2pt}
 }
 
+\newlength\myheight
+\newcommand\Mysavedprevdepth{}%
+\newcommand\UnderlineCentered[3]{%
+  \begin{adjustbox}{minipage=[t]{\dimexpr#1\relax},gstore totalheight=\myheight,margin=0pt}%
+    \centering\leavevmode#3\par\xdef\Mysavedprevdepth{\the\prevdepth}%
+  \end{adjustbox}%s
+  \hspace*{-\dimexpr#1\relax}%
+  \begin{adjustbox}{minipage=[t][\myheight]{\dimexpr#1\relax},margin=0pt}%
+    \vphantom{Eg}\lower\dimexpr#2\relax\hbox to\hsize{\leaders\hrule\hfill\kern0pt}\par
+    \kern-\dimexpr#2\relax
+    \xleaders\vbox to\baselineskip {\vfill\hbox{\lower\dimexpr#2\relax\hbox to\hsize{\leaders\hrule\hfill\kern0pt}}\kern-\dimexpr#2\relax}\vfill
+    \kern\Mysavedprevdepth
+  \end{adjustbox}%
+}%
+
+
 \newcommand{\thetitlepage}{
   \newpage
   \thispagestyle{empty}
 
-\noindent 分类号 \rule[-3pt]{2.5in}{0.5pt} 密级 \rule[-3pt]{2.5in}{0.5pt} \\[12bp]
-UDC\textsuperscript{ 注1} \rule[-3pt]{2.5in}{0.5pt} \\[12bp]
+
+\noindent 分类号 \hspace{0.5em}\UnderlineCentered{2.5in}{3pt}{\theClassificationNumber} 密级 \UnderlineCentered{2.5in}{3pt}{\theClassifiedClass} \\[12bp]
+UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
 
 \begin{center}
   \fontsize{36pt}{36pt}\selectfont{
