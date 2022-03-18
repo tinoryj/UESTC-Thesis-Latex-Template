@@ -241,6 +241,11 @@ tabsize=4
 \fi
 \fi
 
+% \setCJKmainfont[AutoFakeBold=true]{SimSun}
+% \newCJKfontfamily{\heiti}{SimHei}
+% \newfontfamily{\heiti@letter}{SimHei}
+% \setallmainfonts{Times New Roman}
+
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 \newcommand{\bm}{\mathbf}
@@ -305,6 +310,7 @@ tabsize=4
 \setlength{\headheight}{15pt}
 
 \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.75pt}
 \linespread{1.391}
 \setlength\parindent{24pt}
 \titlespacing{\chapter}{0pt}{0pt}{18pt}
@@ -645,6 +651,11 @@ tabsize=4
     of Electronic Science and Technology of China}
 }
 
+\newcommand{\ifpromaster}[2]{
+  \ifthenelse{\equal{\englishdegreename}{Professional Master}}{#1}{#2}
+}
+
+
 \DeclareOption{doctor}{
   \def\chinesedegreename{博士}
   \def\englishdegreename{Doctor}
@@ -850,6 +861,23 @@ tabsize=4
             & \\
     \cline{2-2}
   \end{tabular}\hspace*{\fill} \\[\baselineskip]
+  \ifpromaster{
+  \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
+      p{3.77in}p{15pt}}
+    专业学位类别 & \zh@themajor &\\
+    \cline{2-2}
+    学\chinesespace\chinesespace\chinesespace\chinesespace 号 & \thestudentnumber & \\
+    \cline{2-2}
+    作\hspace{0.66em}者\hspace{0.66em}姓\hspace{0.67em}名 & \zh@theauthor &\\
+    \cline{2-2}
+    指\hspace{0.66em}导\hspace{0.66em}老\hspace{0.67em}师 & \zh@theadvisor &\\
+    \cline{2-2}
+    学\chinesespace\chinesespace\chinesespace\chinesespace 院 & \zh@theschool &\\
+    \cline{2-2}
+  \end{tabular}
+  }
+  {
   \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
       >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
       p{3.77in}p{15pt}}
@@ -864,9 +892,13 @@ tabsize=4
     学\chinesespace\chinesespace 院 & \zh@theschool &\\
     \cline{2-2}
   \end{tabular}
+  }
+
 \end{center}
 
-\ifbachelor{}{\thetitlepage}
+\ifbachelor{}{
+\ifpromaster{\thetitlepageforpromaster}{\thetitlepage}  
+}
 
 \newpage
 \setcounter{page}{1}
@@ -1004,63 +1036,9 @@ School: & \en@theschool \\
 \end{tabular}
 }
 
-
-\newcommand{\MakeCoverProMaster}{
-\thispagestyle{empty}
-\setlength{\extrarowheight}{9pt}
-\ifchinesebook{\pdfbookmark{封面}{cover}}{\pdfbookmark{Cover}{cover}}
-\begin{center}
-  \ifbachelor{\includegraphics{bachelor_font.pdf} \\}{
-    \fontsize{22pt}{22pt}\selectfont 电\hspace{0.5em}子\hspace{0.5em}科\hspace{0.5em}技%
-    \hspace{0.5em}大\hspace{0.5em}学 \\[7bp]}
-  \fontsize{12pt}{12pt}\selectfont UNIVERSITY OF ELECTRONIC SCIENCE
-    AND TECHNOLOGY OF CHINA \\[36bp]
-  \ifbachelor{\fontsize{42pt}{42pt}\selectfont{\bfseries\chinesebooktitle} \\[24bp]}{
-    \fontsize{42pt}{42pt}\selectfont\chinesebooktitle \\[24bp]}
-  \fontsize{16pt}{16pt}\selectfont
-    \textnormal{\MakeUppercase{\englishbooktitle}} \\[48bp]
-  \ifbachelor{
-    %\vspace{0.4cm}
-    \includegraphics[width=180bp]{logo.pdf} \\[40bp]
-  }{\includegraphics[width=180bp]{logo.pdf} \\[40bp]}
-  \begin{tabular}{lp{4.2in}}
-    \bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.2in}{
-        \centering
-          \bfseries\fontsize{18pt}{18pt}\selectfont
-          \zh@thetitle
-    } \\
-    \cline{2-2}
-            & \\
-    \cline{2-2}
-  \end{tabular}\hspace*{\fill} \\[\baselineskip]
-  \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
-      >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
-      p{3.77in}p{15pt}}
-    专业学位类别 & \zh@themajor &\\
-    \cline{2-2}
-    学\chinesespace\chinesespace\chinesespace\chinesespace 号 & \thestudentnumber & \\
-    \cline{2-2}
-    作\hspace{0.66em}者\hspace{0.66em}姓\hspace{0.67em}名 & \zh@theauthor &\\
-    \cline{2-2}
-    指\hspace{0.66em}导\hspace{0.66em}老\hspace{0.67em}师 & \zh@theadvisor &\\
-    \cline{2-2}
-    学\chinesespace\chinesespace\chinesespace\chinesespace 院 & \zh@theschool &\\
-    \cline{2-2}
-  \end{tabular}
-\end{center}
-
-\ifbachelor{}{\thetitlepageforpromaster}
-
-\newpage
-\setcounter{page}{1}
-\setlength{\extrarowheight}{2pt}
-}
-
-
 \newcommand{\thetitlepageforpromaster}{
   \newpage
   \thispagestyle{empty}
-
 
 \noindent 分类号 \hspace{0.5em}\UnderlineCentered{2.5in}{3pt}{\theClassificationNumber} 密级 \UnderlineCentered{2.5in}{3pt}{\theClassifiedClass} \\[12bp]
 UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
@@ -1167,9 +1145,9 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \cline{2-2}
 & \\
 \cline{2-2}
-Author: & \en@theauthor \\
-\cline{2-2}
 Student ID: & \thestudentnumber \\
+\cline{2-2}
+Author: & \en@theauthor \\
 \cline{2-2}
 Supervisor: & \en@theadvisor \\
 \cline{2-2}
