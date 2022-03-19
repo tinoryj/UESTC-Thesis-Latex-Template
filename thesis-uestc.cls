@@ -1075,7 +1075,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
       >{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
       p{2.50in-2em}}
-      申请学位级别 & \chinesedegreename &
+      申请学位级别 & 硕士 &
       专业学位类别 & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
