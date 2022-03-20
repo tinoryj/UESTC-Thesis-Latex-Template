@@ -241,11 +241,6 @@ tabsize=4
 \fi
 \fi
 
-% \setCJKmainfont[AutoFakeBold=true]{SimSun}
-% \newCJKfontfamily{\heiti}{SimHei}
-% \newfontfamily{\heiti@letter}{SimHei}
-% \setallmainfonts{Times New Roman}
-
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 \newcommand{\bm}{\mathbf}
@@ -442,7 +437,7 @@ tabsize=4
   }{
     \pdfbookmark{Chinese Abstract}{chineseabstract}
   }
-  \setcounter{pseudopage}{1}
+  \setcounter{page}{1}\setcounter{pseudopage}{0}
   \chapter*{\heiti 摘\chinesespace 要}
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘要}
@@ -643,6 +638,7 @@ tabsize=4
 
 \DeclareOption{promaster}{
   \def\chinesedegreename{专业硕士}
+  \def\chinesedegreenamelevel{硕士}
   \def\englishdegreename{Professional Master}
   \def\chinesebooktitle{专业学位硕士学位论文}
   \def\englishbooktitle{Master Thesis for Professional Degree}
@@ -895,13 +891,13 @@ tabsize=4
   }
 
 \end{center}
-
+\blankpage
 \ifbachelor{}{
 \ifpromaster{\thetitlepageforpromaster}{\thetitlepage}  
 }
-
+\blankpage
 \newpage
-\setcounter{page}{1}
+\setcounter{page}{0}
 \setlength{\extrarowheight}{2pt}
 }
 
@@ -1000,6 +996,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \noindent
 \hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
 
+\blankpage
 \newpage
 \thispagestyle{empty}\null
 \par{\vspace{2.3cm}}
@@ -1075,7 +1072,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
       >{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
       p{2.50in-2em}}
-      申请学位级别 & 硕士 &
+      申请学位级别 & \chinesedegreenamelevel &
       专业学位类别 & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
@@ -1119,7 +1116,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \vspace{0.54in}
 \noindent
 \hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
-
+\blankpage
 \newpage
 \thispagestyle{empty}\null
 \par{\vspace{2.3cm}}
@@ -1195,6 +1192,7 @@ School: & \en@theschool \\
   导师签名：\rule[-3pt]{4.1cm}{0.5pt} \\
   \null\hspace{259pt} 日期：\chinesespace\chinesespace 年\hspace{21pt}月\hspace{21pt}日
 \end{spacing}
+\blankpage
 \newpage\setcounter{page}{0}\setcounter{pseudopage}{0}
 }
 
