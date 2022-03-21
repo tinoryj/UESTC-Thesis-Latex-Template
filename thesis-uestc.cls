@@ -314,7 +314,7 @@ tabsize=4
 \titlespacing{\subsubsection}{0pt}{12pt}{6pt}
 
 \renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章}
-\renewcommand\thesection{\arabic{chapter}.\arabic{section}}
+\renewcommand\thesection{\bfseries\arabic{chapter}.\bfseries\arabic{section}}
 
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
@@ -437,7 +437,7 @@ tabsize=4
   }{
     \pdfbookmark{Chinese Abstract}{chineseabstract}
   }
-  \setcounter{page}{1}\setcounter{pseudopage}{0}
+  \setcounter{page}{1}
   \chapter*{\heiti 摘\chinesespace 要}
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘要}
@@ -1310,7 +1310,7 @@ School: & \en@theschool \\
     \renewcommand{\appendixname}{Appendix}
   }
 
-  \renewcommand{\thesection}{\Alph{chapter}.\arabic{section}}
+  \renewcommand{\thesection}{\bfseries\Alph{chapter}.\bfseries\arabic{section}}
   \renewcommand{\theequation}{\alph{chapter}-\arabic{equation}}
   \renewcommand{\thetable}{\alph{chapter}-\arabic{table}}
   \renewcommand{\thelstlisting}{\alph{chapter}-\arabic{lstlisting}}
@@ -1337,7 +1337,7 @@ School: & \en@theschool \\
     \renewcommand{\appendixname}{Appendix}
   }
   
-  \renewcommand{\thesection}{A.\arabic{section}}
+  \renewcommand{\thesection}{\bfseries A.\bfseries\arabic{section}}
   
   \renewcommand{\theequation}{a-\arabic{equation}}
   \renewcommand{\thetable}{a-\arabic{table}}
@@ -1373,7 +1373,7 @@ School: & \en@theschool \\
   \interlinepenalty=0
   \chapter*{\translation@originaltitle}
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-  \renewcommand\thesection{\arabic{section}}
+  \renewcommand\thesection{\bfseries\arabic{section}}
     \setcounter{section}{0}
     \addcontentsline{toc}{chapter}{\translation@originaltitle}
     \markboth{\translation@originaltitle}{\translation@originaltitle}
@@ -1392,7 +1392,7 @@ School: & \en@theschool \\
   \interlinepenalty=0
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
   \chapter*{\translation@chinesetitle}
-  \renewcommand\thesection{\arabic{section}}
+  \renewcommand\thesection{\bfseries\arabic{section}}
     \setcounter{section}{0}
     \addcontentsline{toc}{chapter}{\translation@chinesetitle}
     \markboth{\translation@chinesetitle}{\translation@chinesetitle}
@@ -1461,7 +1461,7 @@ School: & \en@theschool \\
 
 \newenvironment{thesistheaccomplish}{
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-  \renewcommand\thesection{\arabic{section}}
+  \renewcommand\thesection{\bfseries\arabic{section}}
   \setcounter{section}{0}
   \nociteaccomplish{*}
   \renewcommand{\bibname}{\thesisaccomplishtitle}
