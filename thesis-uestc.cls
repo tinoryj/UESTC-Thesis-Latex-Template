@@ -438,7 +438,7 @@ tabsize=4
     \pdfbookmark{Chinese Abstract}{chineseabstract}
   }
   \setcounter{page}{1}
-  \chapter*{\heiti 摘\chinesespace 要}
+  \chapter*{\fontsize{15pt}{15pt}\heiti 摘\chinesespace 要}
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘要}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
@@ -464,7 +464,7 @@ tabsize=4
   }{
     \pdfbookmark{English Abstract}{englishabstract}
   }
-  \chapter*{\bfseries ABSTRACT}
+  \chapter*{\fontsize{15pt}{15pt}\bfseries ABSTRACT}
     \fancyhf{}
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
