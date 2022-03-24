@@ -1,6 +1,8 @@
 # UESTC-Thesis-Latex-Template
 UESTC Thesis Latex Template
 
+由于适配章节编号加粗存在bug，目前使用请访问https://github.com/tinoryj/UESTC-Thesis-Latex-Template/tree/f0e830d3aa6f17acef8d4865ac427247a22503ae
+
 使用方式参考广为流传版本 https://github.com/tinoryj/ThesisUESTC
 适配了2022年新标准。
 
