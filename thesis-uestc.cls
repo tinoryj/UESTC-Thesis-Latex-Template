@@ -431,16 +431,15 @@ tabsize=4
 }
 
 \newenvironment{chineseabstract}{
-  %\pagenumbering{Roman}
+  \pagenumbering{Roman}
   \ifchinesebook{
     \pdfbookmark{中文摘要}{chineseabstract}
   }{
     \pdfbookmark{Chinese Abstract}{chineseabstract}
   }
-  \setcounter{pseudopage}{1}
   \chapter*{\fontsize{15pt}{15pt}\heiti 摘\chinesespace 要}
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘要}
+  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\hspace{0.5em}要}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
 }{
   \checkoddpage
@@ -895,9 +894,8 @@ tabsize=4
 \ifbachelor{}{
 \ifpromaster{\thetitlepageforpromaster}{\thetitlepage}  
 }
-
 \newpage
-\setcounter{page}{1}
+\setcounter{page}{0}
 \setlength{\extrarowheight}{2pt}
 }
 
@@ -1191,11 +1189,13 @@ School: & \en@theschool \\
   导师签名：\rule[-3pt]{4.1cm}{0.5pt} \\
   \null\hspace{259pt} 日期：\chinesespace\chinesespace 年\hspace{21pt}月\hspace{21pt}日
 \end{spacing}
+\blankpage
 \newpage\setcounter{page}{0}\setcounter{pseudopage}{0}
 }
 
 \newcommand{\signatureofdeclaration}[1]{
   \includepdf[pages=-]{#1}
+  \blankpage
   \newpage\setcounter{page}{0}\setcounter{pseudopage}{0}
 }
 
@@ -1223,7 +1223,7 @@ School: & \en@theschool \\
     \fi
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目录}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\hspace{0.5em}录}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
     \pdfbookmark{目录}{toc}
   }{
