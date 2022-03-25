@@ -1,10 +1,12 @@
 # UESTC-Thesis-Latex-Template
 UESTC Thesis Latex Template
 
-由于适配章节编号加粗存在bug，目前使用请访问https://github.com/tinoryj/UESTC-Thesis-Latex-Template/tree/f0e830d3aa6f17acef8d4865ac427247a22503ae
+## Issues
+
+* 章节编号加粗，且目录中章节编号不加粗（尚未完成）
 
 使用方式参考广为流传版本 https://github.com/tinoryj/ThesisUESTC
-适配了2022年新标准。
+特别适配了2022年新标准。
 
 ## 使用说明
 
@@ -44,6 +46,14 @@ sudo apt install xxx
 
 ```tex
 \author{$\quad$}{$\quad$}
+```
+
+### 参考文献数量超过100时的悬挂缩进问题
+
+引入参考文献时设置间距为large（如下所示）：
+
+```tex
+\thesisbibliography[large]{reference}
 ```
 
 ## 更新日志
