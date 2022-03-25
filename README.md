@@ -33,6 +33,7 @@ UESTC Thesis Latex Template
 ### 使用代码模板
 
 如下所示，使用代码环境。其中style用于指定语言进行代码高亮；caption用于设置代码段标题；label用于生成代码段标签，以便在正文中引用。这里三项参数均为非必填项（但不填style会导致没有任何格式和高亮）。
+现支持的代码语言高亮包括：c++，shell，python，json，solidity
 
 ```tex
 \begin{lstlisting}[style=shell, caption={xxxx},label{xxxx}]
