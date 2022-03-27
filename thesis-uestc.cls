@@ -360,15 +360,15 @@ tabsize=4
 
 \titleformat{\section}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\thesection}{7pt}{}
+  {\bfseries\arabic{chapter}.\bfseries\arabic{section}}{7pt}{}
 
 \titleformat{\subsection}[block]
   {\fontsize{14pt}{14pt}\selectfont\strong}
-  {\thesubsection}{7pt}{}
+  {\bfseries\arabic{chapter}.\bfseries\arabic{section}.\bfseries\arabic{subsection}}{7pt}{}
 
 \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont\strong}
-  {\thesubsubsection}{6pt}{}
+  {\bfseries\arabic{chapter}.\bfseries\arabic{section}.\bfseries\arabic{subsection}.\bfseries\arabic{subsubsection}}{6pt}{}
 
 \RequirePackage[hang, perpage]{footmisc}
 \addtolength{\footnotesep}{0pt}
