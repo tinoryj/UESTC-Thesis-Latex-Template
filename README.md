@@ -7,8 +7,6 @@
 
 参考main.tex中关于本模板使用的各项说明，正文写法可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
 
-
-
 ### 设置论文相关信息
 
 以下所有内容均需设置在正文开始（\begin{document}）之前
@@ -99,6 +97,11 @@ sudo apt install xxx
 ```tex
 \thesisbibliography[large]{reference}
 ```
+
+### overleaf备注
+
+可能存在中文摘要无页码的问题，解决方案如下：
+在cls文件的439和440行之间增加\setcounter{page}{1}\setcounter{pseudopage}{1}
 
 ## 更新日志
 * 2022.3.17：新版cls模板提供了分类号、密级、UDC号的设置功能，使用方法如下所示(在main.tex中\begin{document}之前加入，与作者等信息等同)：
