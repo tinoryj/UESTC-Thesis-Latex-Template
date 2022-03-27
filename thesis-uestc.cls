@@ -230,10 +230,10 @@ tabsize=4
   \newfontfamily{\heiti@letter}{STHeiti}
   \setallmainfonts{Times New Roman}
 \else
-  \setCJKmainfont[AutoFakeBold=true]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}{fzhei.ttf}
-  \newfontfamily{\heiti@letter}{fzhei.ttf}
-  \setallmainfonts[
+  \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
+  \setallmainfonts[Path=fonts/,
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
@@ -294,7 +294,7 @@ tabsize=4
 
 % \AtBeginDocument{\pretocmd{\ref}{~}{}{}\apptocmd{\ref}{}{}{}}
 
-\newcommand{\thesislist}{
+\newcommand{\thesistablelist}{
   \listoftables
 }
 
@@ -1197,6 +1197,10 @@ School: & \en@theschool \\
   \includepdf[pages=-]{#1}
   \blankpage
   \newpage\setcounter{page}{0}\setcounter{pseudopage}{0}
+}
+
+\newcommand{\insertPDFPage}[1]{
+  \includepdf[pages=-]{#1}
 }
 
 \setlength{\extrarowheight}{2pt}
