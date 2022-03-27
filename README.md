@@ -3,8 +3,6 @@ UESTC Thesis Latex Template
 
 ## Issues
 
-* 章节编号加粗，且目录中章节编号不加粗（尚未完成）
-
 使用方式参考广为流传版本 https://github.com/tinoryj/ThesisUESTC
 特别适配了2022年新标准。
 
@@ -67,3 +65,4 @@ sudo apt install xxx
   * 新增\ProfessionalDegreeArea{}用于设置“专业学位领域”，如下所示：
   ![UDC](pic/promaster.png)
 * 2022.3.18：修正页眉下划线宽度为0.75磅，修正专硕英文封面学号和姓名顺序
+* 2022.3.27: 章节编号加粗（目录不加粗），目前版本完整适配20220224新标准
