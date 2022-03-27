@@ -1,12 +1,10 @@
 # UESTC-Thesis-Latex-Template
-UESTC Thesis Latex Template
+20220224 format standard special edition
 
-## Issues
+## 使用说明
 
 使用方式参考广为流传版本 https://github.com/tinoryj/ThesisUESTC
 特别适配了2022年新标准。
-
-## 使用说明
 
 ### 设置分类号、密级、UDC号
 
