@@ -857,15 +857,15 @@ tabsize=4
   \newpage 
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号表}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 主要符号表}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
-    \pdfbookmark{符号表}{glossary}
-    \printglossary[style=uestc-chinese-symbol, title={\protect\centering 符号表}, nogroupskip]
+    \pdfbookmark{主要符号表}{Symbols}
+    \printglossary[style=uestc-chinese-symbol, title={\protect\centering 主要符号表}, nogroupskip]
   }{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Glossary}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Symbols}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
-    \pdfbookmark{Glossary}{glossary}
-    \printglossary[style=uestc-english, title={\protect\centering Glossary}, nogroupskip]
+    \pdfbookmark{Symbols}{Symbols}
+    \printglossary[style=uestc-english, title={\protect\centering Symbols}, nogroupskip]
   }
   \newpage
 }
