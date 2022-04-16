@@ -56,13 +56,31 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 \UDCNumber{004.78} % UDC号
 ```
 
-### 图、表、缩略词目录设置
+### 图、表目录设置
 
 ```tex
 \thesisfigurelist % 图目录
 \thesistablelist % 表目录
-\thesisglossarylist % 缩略词目录
 ```
+
+### 缩略词/符号表目录设置
+
+由于两者均使用了glossary宏包实现,目前无法进行区分. 因此,请单独使用其中之一,同时使用时会导致所有条目均重复在符号表和缩略词表中显示.
+
+在使用缩略词/符号表时,请在导言区填写缩略语条目并使能glossary宏包(如下所示,详细使用方法见[main.tex](main.tex)):
+```tex
+\makeglossaries % 产生缩略词表/符号表专用,不使用时请注释
+\newacronym[description=逻辑卷管理器]{lvm}{LVM}{Logical Volume Manager} % 定义缩略词/符号:以本项为例,逻辑卷管理器为中文名称;lvm用于文内引用;LVM为显示的应为缩略语或符号;Logical Volume Manager为显示的英文全称/描述
+```
+
+若要添加缩略词/符号表目录,请在需要的位置进行以下设置:
+
+```tex
+% \glsaddall % 默认仅显示被正文引用的项,取消注释以显示所有已定义的缩略词/符号
+\thesisglossarylist % 缩略词目录
+\thesissymbollist % 符号表
+```
+
 
 ### 使用代码模板
 

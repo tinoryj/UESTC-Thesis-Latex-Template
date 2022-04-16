@@ -764,13 +764,11 @@ tabsize=4
 \setacronymstyle{acronym-uestc}
 
 \newglossarystyle{uestc-chinese}{
-  \setlength{\glsdescwidth}{.3\textwidth}
-  \setlength{\glspagelistwidth}{.3\textwidth}
   \renewenvironment{theglossary}%
-  {\begin{longtable}{lp{\glsdescwidth}p{\glspagelistwidth}}}%
+  {\begin{longtable}{p{20mm}p{90mm}p{6.5em}}}%
     {\end{longtable}}%
   \renewcommand*{\glossaryheader}{%
-    \heiti 缩略词 &\heiti 英文全称 &
+    \heiti 英文缩写 &\heiti 英文全称 &
     \heiti 中文全称 \tabularnewline\endhead}%
   \renewcommand*{\glsgroupheading}[1]{}%
   \renewcommand{\glossentry}[2]{
@@ -799,6 +797,33 @@ tabsize=4
   \glossentry{##2}{##3}}
 }
 
+\newglossarystyle{uestc-chinese-symbol}{
+  \renewenvironment{theglossary}%
+  {\begin{longtable}{p{20mm}p{108mm}p{12mm}<{\centering}}}%
+  {\end{longtable}}%
+  %设置没有表头, 以及内容
+  \renewcommand*{\glossaryheader}{%
+    \heiti 符号 &\heiti 说明 &
+    \heiti 页码 \tabularnewline\endhead}%
+  %设置分组间没有表头：
+  \renewcommand*{\glsgroupheading}[1]{}%
+  %主条目第一列名称，第二列说明，第三列页码：
+  \renewcommand{\glossentry}[2]{
+    \glsentryitem{##1}\glstarget{##1}{\glossentryname{##1}} &
+    \glossentrydesc{##1} & ##2\tabularnewline
+  }
+  %子条目第一列空置，第二列说明，第三列页码：
+  \renewcommand*{\subglossentry}[3]{
+    &
+    \glssubentryitem{##2}%
+    \glstarget{##2}{\strut}\glossentrydesc{##2} &
+    ##3\tabularnewline
+  }%
+  %定义分组间空白:
+  \renewcommand*{\glsgroupskip}{%
+  \ifglsnogroupskip\else & &\tabularnewline\fi}%
+}
+
 \defglsentryfmt{%
   \ifglshaslong{\glslabel}{%
     \glsgenacfmt%
@@ -817,13 +842,30 @@ tabsize=4
   \ifchinesebook{
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 缩略词表}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
-    \pdfbookmark{缩略词表}{glossary}
+    \pdfbookmark{缩略词表}{acronyms}
     \printglossary[style=uestc-chinese, title={\protect\centering 缩略词表}, nonumberlist, nogroupskip]
   }{
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Glossary}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \pdfbookmark{Acronyms}{acronyms}
+    \printglossary[style=uestc-english, title={\protect\centering Acronyms}, nonumberlist, nogroupskip]
+  }
+  \newpage
+}
+
+\newcommand{\thesissymbollist}{
+  \newpage 
+  \fancyhf{}
+  \ifchinesebook{
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号表}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \pdfbookmark{符号表}{glossary}
+    \printglossary[style=uestc-chinese-symbol, title={\protect\centering 符号表}, nogroupskip]
+  }{
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Glossary}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
     \pdfbookmark{Glossary}{glossary}
-    \printglossary[style=uestc-english, title={\protect\centering Glossary}, nonumberlist, nogroupskip]
+    \printglossary[style=uestc-english, title={\protect\centering Glossary}, nogroupskip]
   }
   \newpage
 }

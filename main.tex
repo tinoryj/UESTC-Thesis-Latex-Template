@@ -14,6 +14,9 @@
 \ClassifiedClass{公开} % 密级
 \UDCNumber{004.78} % UDC号
 
+\makeglossaries % 产生缩略词表/符号表专用,不使用时请注释
+\newacronym[description=逻辑卷管理器]{lvm}{LVM}{Logical Volume Manager} % 定义缩略词/符号:以本项为例,逻辑卷管理器为中文名称;lvm用于文内引用;LVM为显示的应为缩略语或符号;Logical Volume Manager为显示的英文全称/描述
+
 \begin{document}
 \makecover % 封面+中英文扉页
 \originalitydeclaration % 原创新声明
@@ -32,12 +35,13 @@
 \thesistableofcontents % 目录
 \thesisfigurelist % 图目录，仅在需要时添加，一般情况下请注释
 \thesistablelist % 表目录，仅在需要时添加，一般情况下请注释
+% \glsaddall % 默认仅显示被正文引用的项,取消注释以显示所有已定义的缩略词/符号
 \thesisglossarylist % 缩略词表，仅在需要时添加，一般情况下请注释
-
+\thesissymbollist % 符号表，仅在需要时添加，一般情况下请注释
 
 % 正文内容
 \chapter{绪\hspace{6pt}论}
-角标参考文献\citing{chen2001hao}，\cite{clerc2010discrete}做了xxx。
+角标参考文献\citing{chen2001hao}，\cite{clerc2010discrete}做了xxx。\gls{lvm}
 \chapter{相关研究基础}
 \chapter{工作内容xxx}
 \chapter{全文总结与展望}
