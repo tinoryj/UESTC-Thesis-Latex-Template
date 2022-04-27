@@ -116,6 +116,17 @@ sudo apt install xxx
 \thesisbibliography[large]{reference}
 ```
 
+### 禁止英语单词截断换行
+
+在main.tex中取消注释以下内容，用于禁止文中换行处的英语单词自动截断换行。
+
+```tex
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000
+```
+
 ### overleaf备注
 
 可能存在中文摘要无页码的问题，解决方案如下：

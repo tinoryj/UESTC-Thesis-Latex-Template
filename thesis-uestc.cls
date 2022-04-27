@@ -244,7 +244,7 @@ tabsize=4
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 \newcommand{\bm}{\mathbf}
-
+\setlength{\baselineskip}{20pt}
 \RequirePackage{zhnumber}
 \RequirePackage{pifont}
 
