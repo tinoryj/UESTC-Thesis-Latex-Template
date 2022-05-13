@@ -1,0 +1,184 @@
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\useoutertheme[footline=authorinstitutetitle,subsection=true]{smoothbars}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+
+\setbeamersize{text margin left=6mm,text margin right=6mm} 
+\usepackage{fontspec}
+
+\newfontfamily\chalkd{Times New Roman}
+
+\setbeamerfont{normal text}{family=\chalkd,series=\mdseries}
+\setbeamerfont{alerted text}{family=\chalkd,series=\bfseries}
+\setbeamerfont{frametitle}{family=\chalkd,series=\bfseries}
+
+\setbeamertemplate{title page}
+{
+  \vbox{
+  	\vskip1.2em%
+    \begin{beamercolorbox}[sep=8pt,center,rounded=true,shadow=true]{title}
+      % \fontsize{13.0pt}{\baselineskip}\selectfont
+      \usebeamerfont{title}\fontsize{14.0pt}{\baselineskip}\selectfont\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.5em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip0.5em%\par
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+	\vskip0.2em%\par
+    \begin{beamercolorbox}[sep=8pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \vskip0.5em%\par
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \includegraphics[width=0.25\linewidth]{./pic/logo.pdf}
+    \end{beamercolorbox}
+    \end{beamercolorbox}}
+}
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip 10pt plus1filll}
+    \end{beamercolorbox}%
+  }
+}
+
+% \setbeamertemplate{headline}{%
+%   \leavevmode%
+%   \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{section in head/foot}%
+%   \usebeamercolor[fg]{structure}\Large\insertsectionhead\hfill\insertsubsectionhead%  
+%   \end{beamercolorbox}%
+% }
+
+\setbeamertemplate{footline} 
+  {%
+    % \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    % \end{beamercolorbox}
+    % \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    %   leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+    %   \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+    %   \hfill%
+    %   {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    % \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{title in head/foot}
+      \ifx\insertsectionhead\@empty%
+        \insertshorttitle
+      \else%
+        \ifx\insertsubsectionhead\@empty%
+          \insertshorttitle
+        \else%
+          \insertsectionhead$\quad\cdot\quad$\insertsubsectionhead
+        \fi%   
+      \fi%   
+      }%
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{15.75pt}\selectfont}
+
+\useinnertheme{circles}
+
+%\useoutertheme{default}
+%\useinnertheme[shadow=true]{rounded}
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{lem}{引理}
+\newtheorem{thm}{定理}
+\newtheorem{define}{定义}
+\setbeamerfont{lem}{family=\songti}
+\setbeamerfont{block title}{family=\heiti}
+\setbeamerfont{block body}{family=\songti}
+\setbeamertemplate{lem}[numbered]
+\setbeamertemplate{thm}[numbered]
+\setbeamertemplate{define}[numbered]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\xdefinecolor{uestc}{rgb}{0.067,0.369,0.635}  %RGB #115EA2
+\xdefinecolor{greywhite}{rgb}{0.914,0.914,0.953}   %RGB 233 233 243
+\setbeamercolor{footline}{bg=uestc}
+\setbeamercolor{title}{bg=uestc}
+\setbeamercolor{frametitle}{bg=uestc,fg=white}
+\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+
+\setbeamercolor{uppercol}{bg=white}%
+\setbeamercolor{lowercol}{bg=white}%
+\newcommand{\boldtitle}{\xiaosi\heiti\textcolor{uestc}}
+
+\newenvironment{textbox}[1]{
+    \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol]{\boldtitle{#1}}
+}
+{\end{beamerboxesrounded}}
+
+\setbeamercolor{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor{palette quaternary}{fg=white,bg=structure.fg!50!black}
+%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+\setbeamercolor{titlelike}{parent=palette primary}
+
+%% try
+\setbeamercolor{block title}{bg=uestc,fg=white}
+\setbeamercolor{block body}{bg=greywhite}
+\setbeamercolor*{block title example}{use={normal text,example text},bg=white,fg=uestc}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+%\setbeamercolor{palette sidebar quaternary}{fg=white}
+\setbeamercolor{section in sidebar}{fg=brown}
+\setbeamercolor{section in sidebar shaded}{fg=grey}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=uestc}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=uestc}
+\setbeamercolor{subsection in sidebar}{fg=brown}
+\setbeamercolor{subsection in sidebar shaded}{fg=grey}
+% \AtBeginSection[]{
+% 	\begin{frame}
+% 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+% 	\end{frame}
+% }
+% \AtBeginSubsection[]{
+% 	\begin{frame}
+% 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+% 	\end{frame}
+% }
+
+\mode
+<all>

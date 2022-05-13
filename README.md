@@ -2,7 +2,7 @@
 **20220224 format standard special edition**
 
 **特别适配了2022年新标准**
-
+**新增了答辩slides的beamer模板（用法等参见下文）**
 ## 使用说明
 
 参考main.tex中关于本模板使用的各项说明，正文写法可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
@@ -126,6 +126,11 @@ sudo apt install xxx
 % \hyphenpenalty=10000
 % \hbadness=10000
 ```
+
+## Beamer Slides Template
+
+* Slides模板位于`./slides`目录下，使用时直接参照slides中内容进行修改即可，编译链为xelate->bibtex->xelatex*2
+* 改模板源自overleaf，可直接在overleaf中使用
 
 ### overleaf备注
 
