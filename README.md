@@ -3,6 +3,7 @@
 
 **特别适配了2022年新标准**
 **新增了答辩slides的beamer模板（用法等参见下文）**
+
 ## 使用说明
 
 参考main.tex中关于本模板使用的各项说明，正文写法可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
@@ -34,6 +35,7 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 \setdate[oral]{2022年4月15日}  % 答辩日期，可留空
 \setdate[confer]{2022年6月8日} % 学位授予日期，可留空
 \advisor{导师姓名\chinesespace 导师职称}{English name English title}
+\coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师
 \school{计算机科学与工程学院(网络空间安全学院)}{School of Computer Science and Engineering(School of Cyberspace Security)} % 学院信息
 \major{计算机科学与技术}{Computer Science and Technology} % 专业信息
 \studentnumber{xxxxx} % 学号
@@ -43,6 +45,12 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 
 ```tex
 \ProfessionalDegreeArea{随便学学} % 专业硕士专用：专业学位领域
+```
+
+#### 设置合作导师（专业硕士专用）
+
+```tex
+\coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师
 ```
 
 #### 分类号、密级、UDC号
@@ -149,3 +157,4 @@ sudo apt install xxx
 * 2022.3.18：修正页眉下划线宽度为0.75磅，修正专硕英文封面学号和姓名顺序
 * 2022.3.27: 章节编号加粗（目录不加粗），目前版本完整适配20220224新标准
 * 2022.4.16: 增加主要符号表，修订缩略词表各栏宽度
+* 2022.5.30: 增加合作导师设置，修正“指导老师”为“指导教师”；默认展示PDF修订为专硕版本

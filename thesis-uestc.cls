@@ -519,6 +519,7 @@ tabsize=4
 \newcommand{\zh@theschool}{\chinesespace}
 \newcommand{\zh@themajor}{\chinesespace}
 \newcommand{\zh@theadvisor}{\chinesespace}
+\newcommand{\zh@thecoadvisor}{\chinesespace}
 
 \newcommand{\en@thetitle}{\chinesespace}
 \newcommand{\en@theauthor}{\chinesespace}
@@ -526,6 +527,7 @@ tabsize=4
 \newcommand{\en@theschool}{\chinesespace}
 \newcommand{\en@themajor}{\chinesespace}
 \newcommand{\en@theadvisor}{\chinesespace}
+\newcommand{\en@thecoadvisor}{\chinesespace}
 
 \newcommand{\thestudentnumber}{\chinesespace}
 \newcommand{\theClassificationNumber}{\chinesespace}
@@ -561,6 +563,11 @@ tabsize=4
 \newcommand{\advisor}[2]{
   \renewcommand{\zh@theadvisor}{#1}
   \renewcommand{\en@theadvisor}{#2}
+}
+
+\newcommand{\coAdvisor}[2]{
+  \renewcommand{\zh@thecoadvisor}{#1}
+  \renewcommand{\en@thecoadvisor}{#2}
 }
 
 \newcommand{\studentnumber}[1]{
@@ -908,7 +915,7 @@ tabsize=4
     \cline{2-2}
     作\hspace{0.66em}者\hspace{0.66em}姓\hspace{0.67em}名 & \zh@theauthor &\\
     \cline{2-2}
-    指\hspace{0.66em}导\hspace{0.66em}老\hspace{0.67em}师 & \zh@theadvisor &\\
+    指\hspace{0.66em}导\hspace{0.66em}教\hspace{0.67em}师 & \zh@theadvisor &\\
     \cline{2-2}
     学\chinesespace\chinesespace\chinesespace\chinesespace 院 & \zh@theschool &\\
     \cline{2-2}
@@ -924,7 +931,7 @@ tabsize=4
     \cline{2-2}
     作者姓名 & \zh@theauthor &\\
     \cline{2-2}
-    指导老师 & \zh@theadvisor &\\
+    指导教师 & \zh@theadvisor &\\
     \cline{2-2}
     学\chinesespace\chinesespace 院 & \zh@theschool &\\
     \cline{2-2}
@@ -982,7 +989,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\selectfont}
       p{4.45in}}
-      指导老师 & {\bfseries\zh@theadvisor} \\
+      指导教师 & {\bfseries\zh@theadvisor} \\
     \cline{2-2}
       & {\bfseries 电子科技大学\chinesespace 成都} \\
     \cline{2-2}
@@ -1096,12 +1103,14 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\selectfont}
       p{4.45in}}
-      指导老师 & {\bfseries\zh@theadvisor} \\
+      指导教师 & {\bfseries\zh@theadvisor} \\
     \cline{2-2}
       & {\bfseries 电子科技大学\chinesespace 成都} \\
     \cline{2-2}
+      合作导师 & {\bfseries\zh@thecoadvisor} \\
+    \cline{2-2}
     & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
-  \end{tabular}  \\[36bp]
+  \end{tabular}  \\ [12bp]
 \end{center}
 
   \noindent
@@ -1186,6 +1195,8 @@ Student ID: & \thestudentnumber \\
 Author: & \en@theauthor \\
 \cline{2-2}
 Supervisor: & \en@theadvisor \\
+\cline{2-2}
+Co-Supervisor: & \en@thecoadvisor \\
 \cline{2-2}
 School: & \en@theschool \\
 \cline{2-2}
