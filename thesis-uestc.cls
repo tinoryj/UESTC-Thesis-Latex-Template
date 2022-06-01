@@ -534,6 +534,7 @@ tabsize=4
 \newcommand{\theClassifiedClass}{\chinesespace}
 \newcommand{\theUDCNumber}{\chinesespace}
 \newcommand{\theProfessionalDegreeArea}{\chinesespace}
+\newcommand{\theChairman}{\chinesespace}
 
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
@@ -572,6 +573,10 @@ tabsize=4
 
 \newcommand{\studentnumber}[1]{
   \renewcommand{\thestudentnumber}{#1}
+}
+
+\newcommand{\Chairman}[1]{
+  \renewcommand{\theChairman}{#1}
 }
 
 \newcommand{\ClassificationNumber}[1]{
@@ -977,7 +982,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     学\chinesespace 位\chinesespace 论\chinesespace 文
   } \\[48bp]
 
-  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18pt}{18pt}\selectfont{\bfseries\zh@thetitle} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
   \fontsize{12pt}{12pt}\selectfont（题名和副题名）\\[36bp]
@@ -1027,9 +1032,9 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+      >{\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
       p{4.35in}}
-      答辩委员会主席 & \\
+      答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
@@ -1091,7 +1096,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     学\chinesespace 位\chinesespace 论\chinesespace 文
   } \\[48bp]
 
-  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18pt}{18pt}\selectfont{\bfseries\zh@thetitle} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
   \fontsize{12pt}{12pt}\selectfont（题名和副题名）\\[34bp]
@@ -1107,10 +1112,10 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
       & {\bfseries 电子科技大学\chinesespace 成都} \\
     \cline{2-2}
-      合作导师 & {\bfseries\zh@thecoadvisor} \\
-    \cline{2-2}
+    %   合作导师 & {\bfseries\zh@thecoadvisor} \\
+    % \cline{2-2}
     & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
-  \end{tabular}  \\ [12bp]
+  \end{tabular}  \\ [24bp]
 \end{center}
 
   \noindent
@@ -1149,9 +1154,9 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+      >{\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
       p{4.35in}}
-      答辩委员会主席 & \\
+      答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
@@ -1196,8 +1201,8 @@ Author: & \en@theauthor \\
 \cline{2-2}
 Supervisor: & \en@theadvisor \\
 \cline{2-2}
-Co-Supervisor: & \en@thecoadvisor \\
-\cline{2-2}
+% Co-Supervisor: & \en@thecoadvisor \\
+% \cline{2-2}
 School: & \en@theschool \\
 \cline{2-2}
 \end{tabular}
