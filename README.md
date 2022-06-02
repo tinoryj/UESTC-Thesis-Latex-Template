@@ -2,8 +2,16 @@
 **20220224 format standard special edition**
 
 **特别适配了2022年新标准**
+
 **新增了答辩slides的beamer模板（用法等参见下文）**
-**新增答辩委员会主席设置**
+
+**答辩委员会主席！！！**
+
+![chairman pos](./READMEFig/chairman.png)
+由于学校20220224格式规范中明确显示该内容左对齐，本模板进行了同步，若为了美学设计，请在cls文件中搜索`\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{4.35in}` ，并全局替换为`\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      p{4.35in}`完成对该内容的居中显示。
+
 ## 使用说明
 
 参考main.tex中关于本模板使用的各项说明，正文写法可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
