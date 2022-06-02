@@ -1077,7 +1077,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \noindent
 \begin{tabular}{>{\fontsize{16pt}{16pt}\selectfont}r
   >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
-  p{10.6cm}}
+  p{11cm}}
   Discipline: & \multirow[t]{2}{*}{\en@themajor} \\
 \cline{2-2}
 & \\
@@ -1201,7 +1201,7 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \noindent
 \begin{tabular}{>{\fontsize{16pt}{16pt}\selectfont}r
   >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
-  p{10.6cm}}
+  p{11cm}}
   Discipline: & \multirow[t]{2}{*}{\en@themajor} \\
 \cline{2-2}
 & \\
