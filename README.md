@@ -42,33 +42,51 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 \Chairman{xxxxx} % 答辩委员会主席
 ```
 
-#### 设置专业学位领域（专业硕士专用）
+#### 设置专业学位领域（专业硕士/博士专用）
 
 ```tex
-\ProfessionalDegreeArea{随便学学} % 专业硕士专用：专业学位领域
+\ProfessionalDegreeArea{随便学学} % 专业硕士/博士专用：专业学位领域
 ```
 
-#### 设置合作导师（请按照以下步骤操作）
-0. 使用promaster模板（参见上述，main.tex首行设置）；
-```tex
-\documentclass[promaster]{thesis-uestc}
-```
+#### 设置合作导师
+##### 专业学位硕士/博士（请按照以下步骤操作）
+
 1. 在main.tex中，对以下内容取消注释并设置：
 ```tex
 \coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师
 ```
-2. 在thesis-uestc.cls中修改以下内容（取消注释）：
-  * 1115-1116取消注释；1118行修改为12bp
+2. 在thesis-uestc.cls中修改以下内容（修改后如下所示）：
+  * 1126-1127取消注释；1129行修改为12bp
     ```tex
-    1115    %   合作导师 & {\bfseries\zh@thecoadvisor} \\
-    1116    % \cline{2-2}
-    1117    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
-    1118    \end{tabular}  \\ [24bp]
+    1126    合作导师 & {\bfseries\zh@thecoadvisor} \\
+    1127    \cline{2-2}
+    1128    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
+    1129    \end{tabular}  \\ [12bp]
     ```
-  * 1204-1205行取消注释；
+  * 1215-1216行取消注释；
     ```tex
-    1204    % Co-Supervisor: & \en@thecoadvisor \\
-    1205    % \cline{2-2}
+    1215    Co-Supervisor: & \en@thecoadvisor \\
+    1216    \cline{2-2}
+    ```
+
+##### 学术学位硕士/博士（请按照以下步骤操作）
+
+1. 在main.tex中，对以下内容取消注释并设置：
+```tex
+\coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师
+```
+2. 在thesis-uestc.cls中修改以下内容（修改后如下所示）：
+  * 1008-1009取消注释；1011行修改为24bp
+    ```tex
+    1008    合作导师 & {\bfseries\zh@thecoadvisor} \\
+    1009    \cline{2-2}
+    1010    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
+    1011    \end{tabular}  \\ [24bp]
+    ```
+  * 1091-1092行取消注释；
+    ```tex
+    1091    Co-Supervisor: & \en@thecoadvisor \\
+    1092    \cline{2-2}
     ```
 
 #### 分类号、密级、UDC号

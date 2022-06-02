@@ -675,12 +675,17 @@ tabsize=4
 
 \DeclareOption{engdoctor}{
   \def\chinesedegreename{工程博士}
+  \def\chinesedegreenamelevel{博士}
   \def\englishdegreename{Engineering Doctor}
-  \def\chinesebooktitle{工程博士学位论文}
-  \def\englishbooktitle{Engineering Doctoral Dissertation}
+  \def\chinesebooktitle{专业学位博士学位论文}
+  \def\englishbooktitle{Doctoral Dissertation for Professional Degree}
   \def\display@chineseheader{电子科技大学博士学位论文}
   \def\display@englishheader{Engineering Doctoral Dissertation of
     University of Electronic Science and Technology of China}
+}
+
+\newcommand{\ifengdoctor}[2]{
+  \ifthenelse{\equal{\englishdegreename}{Engineering Doctor}}{#1}{#2}
 }
 
 \ExecuteOptions{master}
@@ -946,7 +951,9 @@ tabsize=4
 \end{center}
 
 \ifbachelor{}{
-\ifpromaster{\thetitlepageforpromaster}{\thetitlepage}  
+\ifpromaster{\thetitlepageforprodegree}{
+  \ifengdoctor{\thetitlepageforprodegree}{\thetitlepage}
+  }  
 }
 \newpage
 \setcounter{page}{0}
@@ -998,6 +1005,8 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
       & {\bfseries 电子科技大学\chinesespace 成都} \\
     \cline{2-2}
+    %   合作导师 & {\bfseries\zh@thecoadvisor} \\
+    % \cline{2-2}
     & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
   \end{tabular}  \\[36bp]
 \end{center}
@@ -1079,12 +1088,14 @@ Author: & \en@theauthor \\
 \cline{2-2}
 Supervisor: & \en@theadvisor \\
 \cline{2-2}
+% Co-Supervisor: & \en@thecoadvisor \\
+% \cline{2-2}
 School: & \en@theschool \\
 \cline{2-2}
 \end{tabular}
 }
 
-\newcommand{\thetitlepageforpromaster}{
+\newcommand{\thetitlepageforprodegree}{
   \newpage
   \thispagestyle{empty}
 
