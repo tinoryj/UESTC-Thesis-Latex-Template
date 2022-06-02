@@ -49,13 +49,16 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 ```
 
 #### 设置合作导师（请按照以下步骤操作）
-0. 使用promaster模板；
+0. 使用promaster模板（参见上述，main.tex首行设置）；
+```tex
+\documentclass[promaster]{thesis-uestc}
+```
 1. 在main.tex中，对以下内容取消注释并设置：
 ```tex
 \coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师
 ```
 2. 在thesis-uestc.cls中修改以下内容（取消注释）：
-  * 1115-1116取消注释；1118行修改为12pt
+  * 1115-1116取消注释；1118行修改为12bp
     ```tex
     1115    %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     1116    % \cline{2-2}
