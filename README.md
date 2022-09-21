@@ -1,5 +1,7 @@
 # UESTC-Thesis-Latex-Template
 
+**[English version of the README](README_Eng.md)**
+
 ## 目录
 
 - [使用说明](#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
