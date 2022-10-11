@@ -23,7 +23,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{lmodern}
-\RequirePackage[nopostdot]{glossaries}
+% \RequirePackage[nopostdot]{glossaries}
+\RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
 \RequirePackage{mathspec}
 \RequirePackage{enumerate}
 \RequirePackage{xeCJK}
@@ -827,7 +828,7 @@ tabsize=4
   %主条目第一列名称，第二列说明，第三列页码：
   \renewcommand{\glossentry}[2]{
     \glsentryitem{##1}\glstarget{##1}{\glossentryname{##1}} &
-    \glossentrydesc{##1} & ##2\tabularnewline
+    \glossentrydesc{##1} & ##2 \tabularnewline
   }
   %子条目第一列空置，第二列说明，第三列页码：
   \renewcommand*{\subglossentry}[3]{
@@ -860,12 +861,12 @@ tabsize=4
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 缩略词表}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
     \pdfbookmark{缩略词表}{acronyms}
-    \printglossary[style=uestc-chinese, title={\protect\centering 缩略词表}, nonumberlist, nogroupskip]
+    \printglossary[type=\acronymtype, style=uestc-chinese, title={\protect\centering 缩略词表}, nonumberlist, nogroupskip]
   }{
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Glossary}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
     \pdfbookmark{Acronyms}{acronyms}
-    \printglossary[style=uestc-english, title={\protect\centering Acronyms}, nonumberlist, nogroupskip]
+    \printglossary[type=\acronymtype, style=uestc-english, title={\protect\centering Acronyms}, nonumberlist, nogroupskip]
   }
   \newpage
 }

@@ -23,7 +23,8 @@
 % \hbadness=10000
 
 \makeglossaries % 产生缩略词表/符号表专用,不使用时请注释
-\newacronym[description=逻辑卷管理器]{lvm}{LVM}{Logical Volume Manager} % 定义缩略词/符号:以本项为例,逻辑卷管理器为中文名称;lvm用于文内引用;LVM为显示的应为缩略语或符号;Logical Volume Manager为显示的英文全称/描述
+\newacronym[description=逻辑卷管理器]{lvm}{LVM}{Logical Volume Manager} % 定义缩略词:以本项为例,逻辑卷管理器为中文名称;lvm用于文内引用;LVM为显示的应为缩略语或符号;Logical Volume Manager为显示的英文全称/描述。
+\newglossaryentry{tree}{name={tree}, description={trees are the better humans}}  % 定义符号:以本项为例,name={tree}为符号名称;tree用于文内引用; description={trees are the better humans}为显示的描述。页码自动添加。
 
 \begin{document}
 \makecover % 封面+中英文扉页
@@ -49,10 +50,34 @@
 
 % 正文内容
 \chapter{绪\hspace{6pt}论}
-角标参考文献\citing{chen2001hao}，\cite{clerc2010discrete}做了xxx。\gls{lvm}
+
+角标参考文献\citing{chen2001hao}，普通参考文献\cite{clerc2010discrete}。
+
+这是符号\gls{tree}。
+
+这是缩略词\acrlong{lvm}的长引用，这是缩略词的短引用\acrshort{lvm}。
+
 \chapter{相关研究基础}
 \chapter{工作内容xxx}
 \chapter{全文总结与展望}
+
+算法框：
+
+\begin{algorithm}[H]
+    \KwData{this text}
+    \KwResult{how to write algorithm with \LaTeX2e}
+    initialization\;
+    \While{not at end of this document}{
+        read current\;
+        \eIf{understand}{
+            go to next section\;
+            current section becomes this one\;
+        }{
+            go back to the beginning of current section\;
+        }
+    }
+    \caption{How to wirte an algorithm.}
+\end{algorithm}
 
 \thesisacknowledgement
 
@@ -73,10 +98,10 @@ xxxx % 直接填写致谢内容，写法与正文一致
 
 % 以下为本科同学专用，插入文献翻译
 \thesistranslationoriginal
-\section{The OFDM Model of Multiple Carrier Waves}
+\section{Tahoe-LAFS: The Least-Authority File System}
 % \insertPDFPage{} % 用于插入单页PDF文件，例如原始文献（该操作会导致页码被取消，请谨慎使用）
 
 \thesistranslationchinese
-\section{基于多载波索引键控的正交频分多路复用系统模型}
+\section{Tahoe-LAFS：最小权限文件系统}
 
 \end{document}
