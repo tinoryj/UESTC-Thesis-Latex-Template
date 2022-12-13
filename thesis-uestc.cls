@@ -46,7 +46,34 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
-\newfontfamily\codefont{Times New Roman}
+
+\ifwindows
+  \setCJKmainfont[AutoFakeBold=true]{SimSun}
+  \newCJKfontfamily{\heiti}{SimHei}
+  \newfontfamily{\heiti@letter}{SimHei}
+  \setallmainfonts{Times New Roman}
+  \newfontfamily\codefont{Times New Roman}
+\else
+\ifmacosx
+  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
+  \newCJKfontfamily{\heiti}{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+  \setallmainfonts{Times New Roman}
+  \newfontfamily\codefont{Times New Roman}
+\else
+  \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
+  \setallmainfonts[Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+  ]{times.ttf}
+  \newfontfamily\codefont[Path=fonts/]{times.ttf}
+\fi
+\fi
+
+
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -219,28 +246,7 @@ tabsize=4
 }
 % Listing over --------
 
-\ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun}
-  \newCJKfontfamily{\heiti}{SimHei}
-  \newfontfamily{\heiti@letter}{SimHei}
-  \setallmainfonts{Times New Roman}
-\else
-\ifmacosx
-  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
-  \newCJKfontfamily{\heiti}{STHeiti}
-  \newfontfamily{\heiti@letter}{STHeiti}
-  \setallmainfonts{Times New Roman}
-\else
-  \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  \setallmainfonts[Path=fonts/,
-    BoldFont=timesbd.ttf,
-    ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf,
-  ]{times.ttf}
-\fi
-\fi
+
 
 \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
@@ -441,6 +447,7 @@ tabsize=4
   \chapter*{\fontsize{15pt}{15pt}\heiti 摘\chinesespace 要}
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\hspace{0.5em}要}
+  \setcounter{pseudopage}{1}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
 }{
   \checkoddpage
@@ -1229,7 +1236,7 @@ School: & \en@theschool \\
 \newcommand{\originalitydeclaration}{
 \newpage
 \thispagestyle{empty}
-\begin{spacing}{2.142}
+\begin{spacing}{2.12}
   \ifchinesebook{\pdfbookmark{独创性声明}{originalitydeclaration}}
     {\pdfbookmark{Originality Declaration}{originalitydeclaration}}
   \noindent\begin{center}
@@ -1253,7 +1260,7 @@ School: & \en@theschool \\
     可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。}
   \par{\fontsize{14pt}{16pt}\selectfont\noindent\null\hspace{28pt}
   \chineseleftparenthesis%
-  保密的学位论文在解密后应遵守此规定%
+  涉密的学位论文须按照国家及学校相关规定管理，在解密后适用于本授权。%
   \chineserightparenthesis} \\[14pt]
   \fontsize{14pt}{16pt}\selectfont\noindent\null\hspace{35pt}作者签名：\rule[-3pt]{4.1cm}{0.5pt}\hspace{12pt}%
   导师签名：\rule[-3pt]{4.1cm}{0.5pt} \\
