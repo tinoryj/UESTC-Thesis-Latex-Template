@@ -23,6 +23,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{lmodern}
+\RequirePackage{microtype}
 % \RequirePackage[nopostdot]{glossaries}
 \RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
 \RequirePackage{mathspec}
@@ -710,6 +711,8 @@ tabsize=4
   \renewcommand{\listtablename}{表目录}
 }{}
 
+\setlength{\cftfigindent}{0pt}
+
 \pretocmd{\listoffigures}{
     \newpage
   \fancyhf{}
@@ -728,6 +731,8 @@ tabsize=4
 \newcommand{\thesisfigurelist}{
   \listoffigures
 }
+
+\setlength{\cfttabindent}{0pt}
 
 \pretocmd{\listoftables}{
     \newpage
