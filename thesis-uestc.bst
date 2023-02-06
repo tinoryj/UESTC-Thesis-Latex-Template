@@ -264,10 +264,9 @@ FUNCTION {format.chinese.names}
               'skip$
               { "," * }
               if$
-              "," *
               t "others" =
                 {
-                  " " * bbl.deng *
+                  "," * bbl.deng *
                 }
                 { " " * t * }
               if$
