@@ -1630,10 +1630,10 @@ School: & \en@theschool \\
 \setlist{nolistsep}
 
 \AtBeginDocument{
-  \setlength{\abovedisplayskip}{8pt}
-  \setlength{\belowdisplayskip}{8pt}
-  \setlength{\belowdisplayshortskip}{8pt}
-  \setlength{\abovedisplayshortskip}{8pt}
+  \setlength{\abovedisplayskip}{6pt}
+  \setlength{\belowdisplayskip}{6pt}
+  \setlength{\belowdisplayshortskip}{6pt}
+  \setlength{\abovedisplayshortskip}{6pt}
 }
 
 \endinput
