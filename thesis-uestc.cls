@@ -910,20 +910,19 @@ tabsize=4
 \ifchinesebook{\pdfbookmark{封面}{cover}}{\pdfbookmark{Cover}{cover}}
 \begin{center}
   \ifbachelor{\includegraphics{bachelor_font.pdf} \\}{
-    \fontsize{22pt}{22pt}\selectfont 电\hspace{0.5em}子\hspace{0.5em}科\hspace{0.5em}技%
-    \hspace{0.5em}大\hspace{0.5em}学 \\[7bp]}
+    \hspace{-0.9em}\fontsize{21.96pt}{21.96pt}\selectfont 电\hspace{0.45em}子\hspace{0.45em}科\hspace{0.45em}技\hspace{0.45em}大\hspace{0.45em}学\\}
   \fontsize{12pt}{12pt}\selectfont UNIVERSITY OF ELECTRONIC SCIENCE
     AND TECHNOLOGY OF CHINA \\[36bp]
-  \ifbachelor{\fontsize{42pt}{42pt}\selectfont{\bfseries\chinesebooktitle} \\[24bp]}{
-    \fontsize{42pt}{42pt}\selectfont\chinesebooktitle \\[24bp]}
+  \ifbachelor{\fontsize{42pt}{42pt}\selectfont{\bfseries\chinesebooktitle} \\[6bp]}{
+    \fontsize{42pt}{42pt}\selectfont\chinesebooktitle \\[6bp]}
   \fontsize{16pt}{16pt}\selectfont
     \textnormal{\MakeUppercase{\englishbooktitle}} \\[48bp]
   \ifbachelor{
     %\vspace{0.4cm}
     \includegraphics[width=180bp]{logo.pdf} \\[40bp]
   }{\includegraphics[width=180bp]{logo.pdf} \\[40bp]}
-  \begin{tabular}{lp{4.2in}}
-    \bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.2in}{
+  \begin{tabular}{lp{10cm}}
+    \hspace{0.12cm}\bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.5in}{
         \centering
           \bfseries\fontsize{18pt}{18pt}\selectfont
           \zh@thetitle
@@ -933,34 +932,34 @@ tabsize=4
     \cline{2-2}
   \end{tabular}\hspace*{\fill} \\[\baselineskip]
   \ifpromaster{
-  \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
-      >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
-      p{3.77in}p{15pt}}
-    专业学位类别 & \zh@themajor &\\
+  \begin{tabular}{>{\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}
+      p{9cm}p{0cm}}
+    \hspace{0.55cm}\scalebox{0.66}[1]{专业学位类别} & \zh@themajor &\\
     \cline{2-2}
-    学\chinesespace\chinesespace\chinesespace\chinesespace 号 & \thestudentnumber & \\
+    \hspace{0.55cm}学\chinesespace\chinesespace 号 & \thestudentnumber & \\
     \cline{2-2}
-    作\hspace{0.66em}者\hspace{0.66em}姓\hspace{0.67em}名 & \zh@theauthor &\\
+    \hspace{0.55cm}作者姓名 & \zh@theauthor &\\
     \cline{2-2}
-    指\hspace{0.66em}导\hspace{0.66em}教\hspace{0.67em}师 & \zh@theadvisor &\\
+    \hspace{0.55cm}指导教师 & \zh@theadvisor &\\
     \cline{2-2}
-    学\chinesespace\chinesespace\chinesespace\chinesespace 院 & \zh@theschool &\\
+    \hspace{0.55cm}学\chinesespace\chinesespace 院 & \zh@theschool &\\
     \cline{2-2}
   \end{tabular}
   }
   {
-  \begin{tabular}{>{\bfseries\fontsize{16pt}{16pt}\selectfont}l
-      >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
-      p{3.77in}p{15pt}}
-    学科专业 & \zh@themajor &\\
+  \begin{tabular}{>{\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}
+      p{9cm}p{0cm}}
+    \hspace{0.55cm}学科专业 & \zh@themajor &\\
     \cline{2-2}
-    学\chinesespace\chinesespace 号 & \thestudentnumber & \\
+    \hspace{0.55cm}学\chinesespace\chinesespace 号 & \thestudentnumber & \\
     \cline{2-2}
-    作者姓名 & \zh@theauthor &\\
+    \hspace{0.55cm}作者姓名 & \zh@theauthor &\\
     \cline{2-2}
-    指导教师 & \zh@theadvisor &\\
+    \hspace{0.55cm}指导教师 & \zh@theadvisor &\\
     \cline{2-2}
-    学\chinesespace\chinesespace 院 & \zh@theschool &\\
+    \hspace{0.55cm}学\chinesespace\chinesespace 院 & \zh@theschool &\\
     \cline{2-2}
   \end{tabular}
   }

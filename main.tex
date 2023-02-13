@@ -1,4 +1,4 @@
-\documentclass[master]{thesis-uestc}
+\documentclass[doctor]{thesis-uestc}
 
 \title{中文题目}{English Title} % 论文题目
 \author{姓名}{English Name} % 作者姓名
@@ -60,6 +60,21 @@
 \begin{figure}
     \includegraphics[width=0.5\linewidth]{pic/logo.pdf}
     \caption[short catption 1]{Test caption 1}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \small
+    \centering
+    \begin{tabular}{@{\ }c@{\ }c}
+        \includegraphics[width=0.49\textwidth]{pic/logo.pdf} & 
+        \hspace{5pt}
+        \includegraphics[width=0.49\textwidth]{pic/logo.pdf}     \\
+        \mbox{\small (a)随便试试的超级长的标题}                                                                               & 
+        \mbox{\small (b)随便试试的超级长的标题}                                                                                  \\
+    \end{tabular}
+    \caption{随便试试的超级长的标题-总}
+    \label{fig:test}
 \end{figure}
 
 
