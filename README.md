@@ -139,7 +139,12 @@ main.tex第一行进行设置，应用thesis-uestc模板，设置学位信息：
 
 ### 缩略词/符号表目录设置
 
-由于两者均使用了glossary宏包实现,目前无法进行区分. 因此,请单独使用其中之一,同时使用时会导致所有条目均重复在符号表和缩略词表中显示.
+注意，模板为了便于操作，对glossary设置了automake，会导致在不使用这部分功能时发生编译错误，请在注释main.tex中的`\makeglossaries`的基础上，在cls文件中取消27行的注释，并将28行注释，如下所示：
+
+```tex
+%\RequirePackage[nopostdot]{glossaries}
+\RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
+```
 
 在使用缩略词/符号表时,请在导言区填写缩略语条目并使能glossary宏包(如下所示,详细使用方法见[main.tex](main.tex)):
 
