@@ -919,8 +919,8 @@ tabsize=4
     \textnormal{\MakeUppercase{\englishbooktitle}} \\[48bp]
   \ifbachelor{
     %\vspace{0.4cm}
-    \includegraphics[width=180bp]{logo.pdf} \\[40bp]
-  }{\includegraphics[width=180bp]{logo.pdf} \\[40bp]}
+    \includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]
+  }{\includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]}
   \begin{tabular}{lp{10cm}}
     \hspace{0.12cm}\bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.5in}{
         \centering
