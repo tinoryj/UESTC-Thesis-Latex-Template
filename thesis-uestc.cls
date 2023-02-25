@@ -70,12 +70,11 @@
   \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
   \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
   \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  % \setallmainfonts[Path=fonts/,
-  %   BoldFont=timesbd.ttf,
-  %   ItalicFont=timesi.ttf,
-  %   BoldItalicFont=timesbi.ttf,
-  % ]{times.ttf}
-  \setmainfont{Times New Roman}
+  \setallmainfonts[Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+  ]{times.ttf}
   \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont[Path=fonts/]{times.ttf}
 \fi
