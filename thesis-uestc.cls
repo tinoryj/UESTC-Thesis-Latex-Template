@@ -22,11 +22,12 @@
 \RequirePackage[tbtags]{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
-\RequirePackage{lmodern}
+% \RequirePackage{lmodern}
 \RequirePackage{microtype}
 % \RequirePackage[nopostdot]{glossaries}
 \RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
-\RequirePackage{mathspec}
+% \RequirePackage{mathspec}
+\RequirePackage[math-style=ISO, bold-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
 \RequirePackage{enumerate}
 \RequirePackage{xeCJK}
 \RequirePackage{xspace}
@@ -52,24 +53,30 @@
   \setCJKmainfont[AutoFakeBold=true]{SimSun}
   \newCJKfontfamily{\heiti}{SimHei}
   \newfontfamily{\heiti@letter}{SimHei}
-  \setallmainfonts{Times New Roman}
+  % \setallmainfonts{Times New Roman}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
 \ifmacosx
   \setCJKmainfont[AutoFakeBold=true]{Songti SC}
   \newCJKfontfamily{\heiti}{STHeiti}
   \newfontfamily{\heiti@letter}{STHeiti}
-  \setallmainfonts{Times New Roman}
+  % \setallmainfonts{Times New Roman}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
   \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
   \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
   \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  \setallmainfonts[Path=fonts/,
-    BoldFont=timesbd.ttf,
-    ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf,
-  ]{times.ttf}
+  % \setallmainfonts[Path=fonts/,
+  %   BoldFont=timesbd.ttf,
+  %   ItalicFont=timesi.ttf,
+  %   BoldItalicFont=timesbi.ttf,
+  % ]{times.ttf}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont[Path=fonts/]{times.ttf}
 \fi
 \fi
@@ -249,9 +256,10 @@ tabsize=4
 
 
 
-\DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
-\DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
-\newcommand{\bm}{\mathbf}
+% \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
+% \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
+% \newcommand{\bm}{\mathbf}
+\newcommand{\bm}{\mathbfit}
 \setlength{\baselineskip}{20pt}
 \RequirePackage{zhnumber}
 \RequirePackage{pifont}
@@ -1633,6 +1641,16 @@ School: & \en@theschool \\
   \setlength{\belowdisplayskip}{6pt}
   \setlength{\belowdisplayshortskip}{6pt}
   \setlength{\abovedisplayshortskip}{6pt}
+
+  \let\mathbb\relax
+  \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+  % Replace Maths Blackboard Bold with latex default font
+
+  \let\mathcal\relax
+  \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+  % Replace mathematical handwriting with latex default font
+
+  \allowdisplaybreaks[4] % Allowing mathematical formulas to span pages
 }
 
 \endinput
