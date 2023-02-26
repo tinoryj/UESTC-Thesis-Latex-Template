@@ -27,7 +27,7 @@
 % \RequirePackage[nopostdot]{glossaries}
 \RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
 % \RequirePackage{mathspec}
-\RequirePackage[math-style=ISO, bold-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\RequirePackage[math-style=ISO,bold-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
 \RequirePackage{enumerate}
 \RequirePackage{xeCJK}
 \RequirePackage{xspace}
@@ -55,7 +55,7 @@
   \newfontfamily{\heiti@letter}{SimHei}
   % \setallmainfonts{Times New Roman}
   \setmainfont{Times New Roman}
-  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
 \ifmacosx
@@ -64,7 +64,7 @@
   \newfontfamily{\heiti@letter}{STHeiti}
   % \setallmainfonts{Times New Roman}
   \setmainfont{Times New Roman}
-  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
   \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
@@ -75,7 +75,7 @@
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
   ]{times.ttf}
-  \setmathfont[Path = ./fonts/]{latinmodern-math.otf}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont[Path=fonts/]{times.ttf}
 \fi
 \fi
@@ -258,7 +258,7 @@ tabsize=4
 % \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 % \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 % \newcommand{\bm}{\mathbf}
-\newcommand{\bm}{\mathbfit}
+\newcommand{\bm}{\symbfit}
 \setlength{\baselineskip}{20pt}
 \RequirePackage{zhnumber}
 \RequirePackage{pifont}
@@ -1643,11 +1643,11 @@ School: & \en@theschool \\
 
   \let\mathbb\relax
   \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
-  % Replace Maths Blackboard Bold with latex default font
+  % Replace Maths blackboard bold font to latex default font
 
   \let\mathcal\relax
   \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-  % Replace mathematical handwriting with latex default font
+  % Replace Maths handwriting font to latex default font
 
   \allowdisplaybreaks[4] % Allowing mathematical formulas to span pages
 }
