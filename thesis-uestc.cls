@@ -258,7 +258,7 @@ tabsize=4
 % \DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
 % \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 % \newcommand{\bm}{\mathbf}
-\newcommand{\bm}{\symbfit}
+\newcommand{\bm}{\mathbfit}
 \setlength{\baselineskip}{20pt}
 \RequirePackage{zhnumber}
 \RequirePackage{pifont}
@@ -1648,7 +1648,7 @@ School: & \en@theschool \\
   \let\mathcal\relax
   \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
   % Replace Maths handwriting font to latex default font
-
+  
   \allowdisplaybreaks[4] % Allowing mathematical formulas to span pages
 }
 
