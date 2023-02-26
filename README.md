@@ -208,6 +208,21 @@ sudo apt install xxx
 可能存在中文摘要无页码的问题，解决方案如下：
 在cls文件的439和440行之间增加\setcounter{page}{1}\setcounter{pseudopage}{1}
 
+### macOS上设置字体
+如果Mac上安装了Microsoft Word，可将uestc-thesis.cls中的代码
+```tex
+  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
+  \newCJKfontfamily{\heiti}{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+```
+改为
+```tex
+  \def\WordPath{/Applications/Microsoft Word.app/Contents/Resources/DFonts/}
+  \setCJKmainfont[AutoFakeBold=true,Path=\WordPath]{SimSun.ttf}
+  \newCJKfontfamily{\heiti}[Path=\WordPath]{SimHei.ttf}
+  \newfontfamily{\heiti@letter}[Path=\WordPath]{SimHei.ttf}
+```
+
 ## Beamer Slides Template
 
 * Slides模板位于`./slides`目录下，使用时直接参照slides中内容进行修改即可，编译链为xelate->bibtex->xelatex*2
