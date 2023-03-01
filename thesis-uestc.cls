@@ -24,7 +24,7 @@
 \RequirePackage{amsthm}
 % \RequirePackage{lmodern}
 \RequirePackage{microtype}
-% \RequirePackage[nopostdot]{glossaries}
+% \RequirePackage[toc,nopostdot,style=long,acronym]{glossaries}
 \RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
 % \RequirePackage{mathspec}
 \RequirePackage[math-style=ISO,bold-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
@@ -70,7 +70,7 @@
   \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
   \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
   \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  \setallmainfonts[Path=fonts/,
+  \setmainfont[Path=fonts/,
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
@@ -929,7 +929,7 @@ tabsize=4
     \includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]
   }{\includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]}
   \begin{tabular}{lp{10cm}}
-    \hspace{0.12cm}\bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{4.5in}{
+    \hspace{0.12cm}\bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
         \centering
           \bfseries\fontsize{18pt}{18pt}\selectfont
           \zh@thetitle

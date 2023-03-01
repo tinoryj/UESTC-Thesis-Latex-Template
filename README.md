@@ -22,12 +22,15 @@
   - [禁止英语单词截断换行](#%E7%A6%81%E6%AD%A2%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E6%88%AA%E6%96%AD%E6%8D%A2%E8%A1%8C)
   - [数字/罗马字符加粗显示](#%E6%95%B0%E5%AD%97%E7%BD%97%E9%A9%AC%E5%AD%97%E7%AC%A6%E5%8A%A0%E7%B2%97%E6%98%BE%E7%A4%BA)
   - [overleaf备注](#overleaf%E5%A4%87%E6%B3%A8)
+- [常见问题](#beamer-slides-template)
 - [Beamer Slides Template](#beamer-slides-template)
 - [更新日志](#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
 
 ## 使用说明
 
 参考main.tex中关于本模板使用的各项说明，正文写法可参考[一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
+
+**注意，请尽量使用texlive 2021或之后的版本进行编译，模板仅在这些版本的latex下进行过相关测试**
 
 ### 设置论文相关信息
 
@@ -222,6 +225,12 @@ sudo apt install xxx
   \newCJKfontfamily{\heiti}[Path=\WordPath]{SimHei.ttf}
   \newfontfamily{\heiti@letter}[Path=\WordPath]{SimHei.ttf}
 ```
+## 常见问题
+
+1. 需要更多层级的目录：[Issue 25](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/25)
+2. 英文封面专业名称不需要双行（减少下划线）：[Issue 42](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/42)
+3. 学院名称单行不够，需要多行：[Issue 31](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/31)
+4. 删除空白页：请使用Adobe Acrobat等PDF软件直接删除页面。模板中的空白页为了打印而准备，电子版提交时请删除。
 
 ## Beamer Slides Template
 
@@ -243,6 +252,7 @@ sudo apt install xxx
 * 2022.4.16: 增加主要符号表，修订缩略词表各栏宽度
 * 2022.5.30: 增加合作导师设置，修正“指导老师”为“指导教师”；默认展示PDF修订为专硕版本
 * 2022.6.30：新增了答辩slides的beamer模板
+* 2023.3.01: bug修复，更新README
 
 ## QQ讨论群
 
