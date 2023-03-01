@@ -231,6 +231,7 @@ sudo apt install xxx
 2. 英文封面专业名称不需要双行（减少下划线）：[Issue 42](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/42)
 3. 学院名称单行不够，需要多行：[Issue 31](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/31)
 4. 删除空白页：请使用Adobe Acrobat等PDF软件直接删除页面。模板中的空白页为了打印而准备，电子版提交时请删除。
+5. 注释符号表：在完成main.tex中的注释后，请修改cls文件，将第27行取消注释，并将第28行注释（避免glossaries的自动编译导致的问题）
 
 ## Beamer Slides Template
 
