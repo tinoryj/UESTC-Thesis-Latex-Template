@@ -371,26 +371,26 @@ tabsize=4
 \setcounter{tocdepth}{2}
 
 \titleformat{\chapter}[block]
-  {\centering\fontsize{15pt}{15pt}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
+  {\centering\fontsize{15bp}{15bp}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
 
 \titleformat{\section}[block]
-  {\fontsize{14pt}{14pt}\selectfont\strong}
+  {\fontsize{14bp}{14bp}\selectfont\strong}
   {\bfseries\arabic{chapter}.\bfseries\arabic{section}}{7pt}{}
 
 \titleformat{\subsection}[block]
-  {\fontsize{14pt}{14pt}\selectfont\strong}
+  {\fontsize{14bp}{14bp}\selectfont\strong}
   {\bfseries\arabic{chapter}.\bfseries\arabic{section}.\bfseries\arabic{subsection}}{7pt}{}
 
 \titleformat{\subsubsection}[block]
-  {\fontsize{12pt}{12pt}\selectfont\strong}
+  {\fontsize{12bp}{12bp}\selectfont\strong}
   {\bfseries\arabic{chapter}.\bfseries\arabic{section}.\bfseries\arabic{subsection}.\bfseries\arabic{subsubsection}}{6pt}{}
 
 \RequirePackage[hang, perpage]{footmisc}
 \addtolength{\footnotesep}{0pt}
 \setlength{\footnotemargin}{13.5pt}
 
-\renewcommand{\footnotesize}{\fontsize{9pt}{10.8pt}\selectfont}
-\renewcommand{\small}{\fontsize{10.5pt}{12.6pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{9bp}{10.8bp}\selectfont}
+\renewcommand{\small}{\fontsize{10.5bp}{12.6bp}\selectfont}
 \renewcommand\footnotelayout{\fontsize{9}{11.7}\selectfont}
 
 \renewcommand{\thefootnote}{\ifcase\value{footnote}\or\ding{172}\or
@@ -452,11 +452,11 @@ tabsize=4
   }{
     \pdfbookmark{Chinese Abstract}{chineseabstract}
   }
-  \chapter*{\fontsize{15pt}{15pt}\heiti 摘\chinesespace 要}
+  \chapter*{\fontsize{15bp}{15bp}\heiti 摘\chinesespace 要}
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\hspace{0.5em}要}
+  \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont 摘\hspace{0.5em}要}
   \setcounter{pseudopage}{1}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+  \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
 }{
   \checkoddpage
   \ifoddpage
@@ -479,10 +479,10 @@ tabsize=4
   }{
     \pdfbookmark{English Abstract}{englishabstract}
   }
-  \chapter*{\fontsize{15pt}{15pt}\bfseries ABSTRACT}
+  \chapter*{\fontsize{15bp}{15bp}\bfseries ABSTRACT}
     \fancyhf{}
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont ABSTRACT}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
 }{
   \checkoddpage
   \ifoddpage
@@ -526,7 +526,7 @@ tabsize=4
 \cftsetindents{subsection}{44pt}{31pt}
 \cftsetindents{subsubsection}{76pt}{41pt}
 
-\renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\strong}
+\renewcommand{\cfttoctitlefont}{\fontsize{15bp}{15bp}\selectfont\strong}
 \renewcommand\cftchapfont{\strong}
 
 \newcommand{\zh@thetitle}{\chinesespace}
@@ -727,8 +727,8 @@ tabsize=4
 \pretocmd{\listoffigures}{
     \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont\listfigurename}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+  \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont\listfigurename}
+  \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
   \ifchinesebook{
     \addtolength{\cftfignumwidth}{12pt}
     \renewcommand{\cftfigpresnum}{\figurename}
@@ -748,8 +748,8 @@ tabsize=4
 \pretocmd{\listoftables}{
     \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont\listtablename}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+  \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont\listtablename}
+  \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
   
   \ifchinesebook{
     \addtolength{\cfttabnumwidth}{12pt}
@@ -764,8 +764,8 @@ tabsize=4
 \pretocmd{\listoftables}{
     \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont\listtablename}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+  \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont\listtablename}
+  \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
   
   \ifchinesebook{
     \addtolength{\cfttabnumwidth}{12pt}
@@ -881,13 +881,13 @@ tabsize=4
   \newpage 
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 缩略词表}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont 缩略词表}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{缩略词表}{acronyms}
     \printglossary[type=\acronymtype, style=uestc-chinese, title={\protect\centering 缩略词表}, nonumberlist, nogroupskip]
   }{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Glossary}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont Glossary}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{Acronyms}{acronyms}
     \printglossary[type=\acronymtype, style=uestc-english, title={\protect\centering Acronyms}, nonumberlist, nogroupskip]
   }
@@ -898,13 +898,13 @@ tabsize=4
   \newpage 
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 主要符号表}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont 主要符号表}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{主要符号表}{Symbols}
     \printglossary[style=uestc-chinese-symbol, title={\protect\centering 主要符号表}, nogroupskip]
   }{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Symbols}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont Symbols}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{Symbols}{Symbols}
     \printglossary[style=uestc-english, title={\protect\centering Symbols}, nogroupskip]
   }
@@ -917,21 +917,21 @@ tabsize=4
 \ifchinesebook{\pdfbookmark{封面}{cover}}{\pdfbookmark{Cover}{cover}}
 \begin{center}
   \ifbachelor{\includegraphics{bachelor_font.pdf} \\}{
-    \hspace{-0.9em}\fontsize{21.96pt}{21.96pt}\selectfont 电\hspace{0.45em}子\hspace{0.45em}科\hspace{0.45em}技\hspace{0.45em}大\hspace{0.45em}学\\}
-  \fontsize{12pt}{12pt}\selectfont UNIVERSITY OF ELECTRONIC SCIENCE
+    \hspace{-0.9em}\fontsize{22bp}{22bp}\selectfont 电\hspace{0.45em}子\hspace{0.45em}科\hspace{0.45em}技\hspace{0.45em}大\hspace{0.45em}学\\}
+  \fontsize{12bp}{12bp}\selectfont UNIVERSITY OF ELECTRONIC SCIENCE
     AND TECHNOLOGY OF CHINA \\[36bp]
-  \ifbachelor{\fontsize{42pt}{42pt}\selectfont{\bfseries\chinesebooktitle} \\[6bp]}{
-    \fontsize{42pt}{42pt}\selectfont\chinesebooktitle \\[6bp]}
-  \fontsize{16pt}{16pt}\selectfont
+  \ifbachelor{\fontsize{42bp}{42bp}\selectfont{\bfseries\chinesebooktitle} \\[6bp]}{
+    \fontsize{42bp}{42bp}\selectfont\chinesebooktitle \\[6bp]}
+  \fontsize{16bp}{16bp}\selectfont
     \textnormal{\MakeUppercase{\englishbooktitle}} \\[48bp]
   \ifbachelor{
     %\vspace{0.4cm}
     \includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]
   }{\includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]}
   \begin{tabular}{lp{10cm}}
-    \hspace{0.12cm}\bfseries\fontsize{18pt}{18pt}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
+    \hspace{0.12cm}\bfseries\fontsize{18bp}{18bp}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
         \centering
-          \bfseries\fontsize{18pt}{18pt}\selectfont
+          \bfseries\fontsize{18bp}{18bp}\selectfont
           \zh@thetitle
     } \\
     \cline{2-2}
@@ -939,8 +939,8 @@ tabsize=4
     \cline{2-2}
   \end{tabular}\hspace*{\fill} \\[\baselineskip]
   \ifpromaster{
-  \begin{tabular}{>{\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}l
-      >{\centering\arraybackslash\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}
+  \begin{tabular}{>{\bfseries\fontsize{16bp}{16bp}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{16bp}{16bp}\selectfont}
       p{9cm}p{0cm}}
     \hspace{0.55cm}\scalebox{0.66}[1]{专业学位类别} & \zh@themajor &\\
     \cline{2-2}
@@ -955,8 +955,8 @@ tabsize=4
   \end{tabular}
   }
   {
-  \begin{tabular}{>{\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}l
-      >{\centering\arraybackslash\bfseries\fontsize{15.96pt}{15.96pt}\selectfont}
+  \begin{tabular}{>{\bfseries\fontsize{16bp}{16bp}\selectfont}l
+      >{\centering\arraybackslash\bfseries\fontsize{16bp}{16bp}\selectfont}
       p{9cm}p{0cm}}
     \hspace{0.55cm}学科专业 & \zh@themajor &\\
     \cline{2-2}
@@ -1008,21 +1008,21 @@ tabsize=4
 UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
 
 \begin{center}
-  \fontsize{36pt}{36pt}\selectfont{
+  \fontsize{36bp}{36bp}\selectfont{
     学\chinesespace 位\chinesespace 论\chinesespace 文
   } \\[48bp]
 
-  \fontsize{18pt}{18pt}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
-  \fontsize{12pt}{12pt}\selectfont（题名和副题名）\\[36bp]
-  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@theauthor} \\
+  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[36bp]
+  \fontsize{16bp}{16bp}\selectfont{\bfseries\zh@theauthor} \\
   \vspace{-15pt}
   \rule{1.63in}{.5pt} \\
-  \fontsize{12pt}{12pt}\selectfont（作者姓名） \\[36bp]
+  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[36bp]
 
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{16pt}{16pt}\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{16bp}{16bp}\selectfont}
       p{4.45in}}
       指导教师 & {\bfseries\zh@theadvisor} \\
     \cline{2-2}
@@ -1030,47 +1030,47 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
     %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     % \cline{2-2}
-    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
+    & \fontsize{12bp}{12bp}\selectfont（姓名、职称、单位名称）
   \end{tabular}  \\[36bp]
 \end{center}
 
   \noindent
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.0in}
-      >{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      >{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{2.50in}}
       申请学位级别 & \chinesedegreename &
       学科专业 & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.59in}
-      >{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      >{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.59in}}
       提交论文日期 & \thedatesubmit &
       论文答辩日期 & \thedateoral \\
     \cline{2-2}
     \cline{4-4}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{4.02in}}
       学位授予单位和日期 & 电子科技大学\chinesespace{} \thedateconfer \\
     \cline{2-2}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{4.35in}}
       答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\heiti\selectfont}
       p{5.01in}}
       评阅人 & \\
     \cline{2-2}
@@ -1085,21 +1085,21 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \par{\vspace{2.3cm}}
 \noindent
 \begin{minipage}[t][1.52cm][t]{\textwidth}
-  \fontsize{18pt}{20pt}\selectfont
+  \fontsize{18bp}{20bp}\selectfont
   \bfseries\centering\en@thetitle
 \end{minipage}
 \par{\vspace{6.3cm}}
 \noindent
 \begin{minipage}[t][1.52cm][t]{\textwidth}
-  \fontsize{15pt}{17pt}\selectfont
+  \fontsize{15bp}{17bp}\selectfont
   \centering\noindent
   A \englishbooktitlesubmit{} Submitted to \\
   University of Electronic Science and Technology of China
 \end{minipage}
 \par{\vspace{3.2cm}}
 \noindent
-\begin{tabular}{>{\fontsize{16pt}{16pt}\selectfont}r
-  >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
+\begin{tabular}{>{\fontsize{16bp}{16bp}\selectfont}r
+  >{\centering\arraybackslash\bfseries\fontsize{16bp}{16bp}\selectfont}
   p{11cm}}
   Discipline: & \multirow[t]{2}{*}{\en@themajor} \\
 \cline{2-2}
@@ -1126,21 +1126,21 @@ School: & \en@theschool \\
 UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
 
 \begin{center}
-  \fontsize{36pt}{36pt}\selectfont{
+  \fontsize{36bp}{36bp}\selectfont{
     学\chinesespace 位\chinesespace 论\chinesespace 文
   } \\[48bp]
 
-  \fontsize{18pt}{18pt}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
-  \fontsize{12pt}{12pt}\selectfont（题名和副题名）\\[34bp]
-  \fontsize{16pt}{16pt}\selectfont{\bfseries\zh@theauthor} \\
+  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[34bp]
+  \fontsize{16bp}{16bp}\selectfont{\bfseries\zh@theauthor} \\
   \vspace{-15pt}
   \rule{1.63in}{.5pt} \\
-  \fontsize{12pt}{12pt}\selectfont（作者姓名） \\[34bp]
+  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[34bp]
 
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{16pt}{16pt}\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{16bp}{16bp}\selectfont}
       p{4.45in}}
       指导教师 & {\bfseries\zh@theadvisor} \\
     \cline{2-2}
@@ -1148,53 +1148,53 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
     \cline{2-2}
     %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     % \cline{2-2}
-    & \fontsize{12pt}{12pt}\selectfont（姓名、职称、单位名称）
+    & \fontsize{12bp}{12bp}\selectfont（姓名、职称、单位名称）
   \end{tabular}  \\ [24bp]
 \end{center}
 
   \noindent
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.0in}
-      >{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      >{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{2.50in-2em}}
       申请学位级别 & \chinesedegreenamelevel &
       专业学位类别 & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{4.53in}}
       专业学位领域 & \theProfessionalDegreeArea \\
     \cline{2-2}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.59in}
-      >{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+      >{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{1.59in}}
       提交论文日期 & \thedatesubmit &
       论文答辩日期 & \thedateoral \\
     \cline{2-2}
     \cline{4-4}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{4.02in}}
       学位授予单位和日期 & 电子科技大学\chinesespace{} \thedateconfer \\
     \cline{2-2}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\arraybackslash\fontsize{14pt}{14pt}\bfseries\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
       p{4.35in}}
       答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
-  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
-      >{\centering\arraybackslash\fontsize{14pt}{14pt}\heiti\selectfont}
+  \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
+      >{\centering\arraybackslash\fontsize{14bp}{14bp}\heiti\selectfont}
       p{5.01in}}
       评阅人 & \\
     \cline{2-2}
@@ -1209,21 +1209,21 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp
 \par{\vspace{2.3cm}}
 \noindent
 \begin{minipage}[t][1.52cm][t]{\textwidth}
-  \fontsize{18pt}{20pt}\selectfont
+  \fontsize{18bp}{20bp}\selectfont
   \bfseries\centering\en@thetitle
 \end{minipage}
 \par{\vspace{6.3cm}}
 \noindent
 \begin{minipage}[t][1.52cm][t]{\textwidth}
-  \fontsize{15pt}{17pt}\selectfont
+  \fontsize{15bp}{17bp}\selectfont
   \centering\noindent
   A \englishbooktitlesubmit{} Submitted to \\
   University of Electronic Science and Technology of China
 \end{minipage}
 \par{\vspace{3.2cm}}
 \noindent
-\begin{tabular}{>{\fontsize{16pt}{16pt}\selectfont}r
-  >{\centering\arraybackslash\bfseries\fontsize{16pt}{16pt}\selectfont}
+\begin{tabular}{>{\fontsize{16bp}{16bp}\selectfont}r
+  >{\centering\arraybackslash\bfseries\fontsize{16bp}{16bp}\selectfont}
   p{11cm}}
   Discipline: & \multirow[t]{2}{*}{\en@themajor} \\
 \cline{2-2}
@@ -1255,7 +1255,7 @@ School: & \en@theschool \\
   \ifchinesebook{\pdfbookmark{独创性声明}{originalitydeclaration}}
     {\pdfbookmark{Originality Declaration}{originalitydeclaration}}
   \noindent\begin{center}
-  \fontsize{18pt}{20pt}\selectfont\bfseries 独创性声明
+  \fontsize{18bp}{20bp}\selectfont\bfseries 独创性声明
   \end{center}
     \par{\fontsize{14.04pt}{16.848pt}\selectfont\noindent\null\hspace{28pt}%
     本人声明所呈交的学位论文是本人在导师指导下进行的研究工作%
@@ -1269,7 +1269,7 @@ School: & \en@theschool \\
   日期：\chinesespace\chinesespace 年\hspace{21pt}月\hspace{21pt}日 \\
   \vspace{-0.4cm}
   \noindent\begin{center}
-    \fontsize{18pt}{20pt}\selectfont\bfseries 论文使用授权
+    \fontsize{18bp}{20bp}\selectfont\bfseries 论文使用授权
   \end{center}
   \par{\fontsize{14.04pt}{16pt}\selectfont\noindent\null\hspace{28pt}%
     本学位论文作者完全了解电子科技大学有关保留、使用学位论文的规定，同意学校有权保留并向国家有关部门或机构送交论文的复印件和数字文档，允许论文被查阅。本人授权电子科技大学可以将学位论文的全部或部分内容编入有关数据库进行检索及下载，可以采用影印、扫描等复制手段保存、汇编学位论文。}
@@ -1300,13 +1300,13 @@ School: & \en@theschool \\
 \newcommand{\standardheader}{
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\display@chineseheader}
-    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark}
+    \fancyhead[CE]{\fontsize{10.5bp}{12.6bp}\selectfont\display@chineseheader}
+    \fancyhead[CO]{\fontsize{10.5bp}{12.6bp}\selectfont\leftmark}
   }{
-    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\nouppercase\display@englishheader}
-    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\nouppercase\leftmark}
+    \fancyhead[CE]{\fontsize{10.5bp}{12.6bp}\selectfont\nouppercase\display@englishheader}
+    \fancyhead[CO]{\fontsize{10.5bp}{12.6bp}\selectfont\nouppercase\leftmark}
   }
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+  \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\thepage}
 }
 
 \pretocmd{\tableofcontents}{
@@ -1319,12 +1319,12 @@ School: & \en@theschool \\
     \fi
   \fancyhf{}
   \ifchinesebook{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\hspace{0.5em}录}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont 目\hspace{0.5em}录}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{目录}{toc}
   }{
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont Contents}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{pseudopage}}
+    \fancyhead[C]{\fontsize{10.5bp}{12.6bp}\selectfont Contents}
+    \fancyfoot[CE,CO]{\fontsize{9bp}{10.8bp}\selectfont\Roman{pseudopage}}
     \pdfbookmark{Contents}{toc}
   }
 }{}{}
@@ -1395,7 +1395,7 @@ School: & \en@theschool \\
   \ifchinesebook{}{\addtocontents{toc}{\protect\addtolength{\cftchapnumwidth}{12pt}}}
   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
   \titleformat{\chapter}[block]
-    {\centering\fontsize{15pt}{15pt}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
+    {\centering\fontsize{15bp}{15bp}\selectfont\strong\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
   \ifchinesebook{
     \renewcommand{\thechapter}{附录\Alph{chapter}}
     \renewcommand{\appendixname}{附录}
@@ -1423,7 +1423,7 @@ School: & \en@theschool \\
   \interlinepenalty=0
   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
   \titleformat{\chapter}[block]
-    {\centering\fontsize{15pt}{15pt}\selectfont\strong\thispagestyle{fancy}}{附\hspace{12pt}录}{7.5pt}{}
+    {\centering\fontsize{15bp}{15bp}\selectfont\strong\thispagestyle{fancy}}{附\hspace{12pt}录}{7.5pt}{}
   %\renewcommand{\thechapter}{附\hspace{12pt}录}
   \ifchinesebook{
     \renewcommand{\appendixname}{附录}
