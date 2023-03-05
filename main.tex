@@ -77,6 +77,37 @@
     \label{fig:test}
 \end{figure}
 
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t]{0.35\linewidth}
+        \centering
+        \includegraphics[scale=0.25]{logo.pdf}
+        \caption{Fig. 1}
+        \label{fig:1-1}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.35\linewidth}
+        \centering
+        \includegraphics[scale=0.25]{logo.pdf}
+        \caption{Fig. 2}
+        \label{fig:1-2}
+    \end{subfigure}
+    \\[6bp]
+    \begin{subfigure}[t]{0.35\linewidth}
+        \centering
+        \includegraphics[scale=0.25]{logo.pdf}
+        \caption{Fig. 3}
+        \label{fig:1-3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.35\linewidth}
+        \centering
+        \includegraphics[scale=0.25]{logo.pdf}
+        \caption{Fig. 4}
+        \label{fig:1-4}
+    \end{subfigure}
+    \caption{Fig.}
+    \label{fig:1}
+\end{figure}
+
 
 \chapter{相关研究基础}
 \chapter{工作内容xxx}
@@ -84,7 +115,7 @@
 
 算法框：
 
-\begin{algorithm}[H]
+\begin{algorithm}[H]\label{alg:1}
     \KwData{this text}
     \KwResult{how to write algorithm with \LaTeX2e}
     initialization\;
@@ -99,6 +130,8 @@
     }
     \caption{How to wirte an algorithm.}
 \end{algorithm}
+
+这是算法\algref{alg:1}。
 
 \thesisacknowledgement
 

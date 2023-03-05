@@ -2,6 +2,9 @@
 
 \LoadClass[12pt, openany, twoside]{book}
 
+\RequirePackage{silence} 
+\WarningsOff[everypage] % Suppression of everypage warnings
+
 \RequirePackage{ifxetex}
 \RequireXeTeX
 
@@ -25,7 +28,7 @@
 % \RequirePackage{lmodern}
 \RequirePackage{microtype}
 % \RequirePackage[toc,nopostdot,style=long,acronym]{glossaries}
-\RequirePackage[toc,nopostdot,style=long,automake,acronym]{glossaries}
+\RequirePackage[sort=use,nopostdot,style=long,automake,acronym]{glossaries}
 % \RequirePackage{mathspec}
 \RequirePackage[math-style=ISO,bold-style=ISO,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
 \RequirePackage{enumerate}
@@ -287,6 +290,7 @@ tabsize=4
 \RequirePackage{enumitem}
 
 \RequirePackage[algochapter, boxruled, linesnumbered]{algorithm2e}
+\renewcommand{\algref}[1]{\hyperref[#1]{\arabic{chapter}-\arabic{algocf}}}
 
 \RequirePackage{etoolbox}
 \RequirePackage{newfloat}
@@ -300,7 +304,7 @@ tabsize=4
 
 \RequirePackage[titles]{tocloft}
 \RequirePackage[labelformat=simple]{subcaption}
-\captionsetup[subfigure]{font=small, belowskip=6pt, width=36pt}
+\captionsetup[subfigure]{font=small, belowskip=6pt, width=40pt, justification=centering}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \newcommand{\floatcontinue}{\end{figure}\clearpage\begin{figure}[tb]\ContinuedFloat}
 
@@ -338,14 +342,44 @@ tabsize=4
 	\renewcommand{\thelstlisting}{\arabic{chapter}-\arabic{lstlisting}}
 }
 
+\setlength{\floatsep}{6bp}
+\setlength{\textfloatsep}{6bp}
+\setlength{\intextsep}{6bp}
 %\captionsetup{format=hang}
 %\captionsetup{width=\textwidth - 42pt}
-\captionsetup{width=\textwidth - 84pt}
-\captionsetup[figure]{aboveskip=6pt, belowskip=0pt}
-\captionsetup[table]{aboveskip=9pt, belowskip=0pt}
-\captionsetup[lstlisting]{aboveskip=6pt, belowskip=0pt}
+\captionsetup{width=\textwidth - 84pt, skip=6bp, figureposition=bottom, tableposition=top}
+\captionsetup[figure]{belowskip=6bp}
+\captionsetup[table]{aboveskip=6bp}
+\captionsetup[lstlisting]{aboveskip=6bp, belowskip=0bp}
 
-\setlength{\intextsep}{9pt}
+% 由于 LaTeX2e kernel 的问题，图表等浮动体与文字前后的距离不一致，需要进行 patch。
+% 参考 https://www.zhihu.com/question/46618031、https://tex.stackexchange.com/a/40363/82731} 和 https://github.com/ustctug/ustcthesis。
+\patchcmd{\@addtocurcol}%
+  {\vskip \intextsep}%
+  {\edef\save@first@penalty{\the\lastpenalty}\unpenalty
+   \ifnum \lastpenalty = \@M  % hopefully the OR penalty
+     \unpenalty
+   \else
+     \penalty \save@first@penalty \relax % put it back
+   \fi
+   \ifnum\outputpenalty <-\@Mii
+     \addvspace\intextsep
+     \vskip\parskip
+   \else
+     \addvspace\intextsep
+   \fi}%
+  {}{\uestc@patch@error{\@addtocurcol}}
+\patchcmd{\@addtocurcol}%
+  {\vskip\intextsep \ifnum\outputpenalty <-\@Mii \vskip -\parskip\fi}%
+  {\ifnum\outputpenalty <-\@Mii
+     \aftergroup\vskip\aftergroup\intextsep
+     \aftergroup\nointerlineskip
+   \else
+     \vskip\intextsep
+   \fi}%
+  {}{\uestc@patch@error{\@addtocurcol}}
+\patchcmd{\@getpen}{\@M}{\@Mi}
+  {}{\uestc@patch@error{\@getpen}}
 
 \AtBeginEnvironment{figure}{%
   \def\@floatboxreset{\centering}%
