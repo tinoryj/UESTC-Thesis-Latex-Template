@@ -8,6 +8,11 @@
 \RequirePackage{ifxetex}
 \RequireXeTeX
 
+\RequirePackage{xpatch}
+\newcommand{\uestcerror}[1]{%
+  \ClassError{thesis-uestc}{#1}{}%
+}
+
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage[font={doublespacing, small}, labelsep=space, skip=6pt]{caption}
@@ -368,7 +373,7 @@ tabsize=4
    \else
      \addvspace\intextsep
    \fi}%
-  {}{\uestc@patch@error{\@addtocurcol}}
+  {}{\uestcerror{patch floating body fail}}
 \patchcmd{\@addtocurcol}%
   {\vskip\intextsep \ifnum\outputpenalty <-\@Mii \vskip -\parskip\fi}%
   {\ifnum\outputpenalty <-\@Mii
@@ -377,9 +382,9 @@ tabsize=4
    \else
      \vskip\intextsep
    \fi}%
-  {}{\uestc@patch@error{\@addtocurcol}}
+  {}{\uestcerror{patch floating body fail}}
 \patchcmd{\@getpen}{\@M}{\@Mi}
-  {}{\uestc@patch@error{\@getpen}}
+  {}{\uestcerror{patch floating body fail}}
 
 \AtBeginEnvironment{figure}{%
   \def\@floatboxreset{\centering}%
