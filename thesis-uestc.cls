@@ -58,26 +58,29 @@
 \RequirePackage{listings}
 
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun}
+  \setCJKmainfont[AutoFakeBold=4.5]{SimSun}
   \newCJKfontfamily{\heiti}{SimHei}
   \newfontfamily{\heiti@letter}{SimHei}
+  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
   % \setallmainfonts{Times New Roman}
   \setmainfont{Times New Roman}
   \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
 \ifmacosx
-  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
+  \setCJKmainfont[AutoFakeBold=4.5]{Songti SC}
   \newCJKfontfamily{\heiti}{STHeiti}
   \newfontfamily{\heiti@letter}{STHeiti}
+  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
   % \setallmainfonts{Times New Roman}
   \setmainfont{Times New Roman}
   \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \newfontfamily\codefont{Times New Roman}
 \else
-  \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
+  \setCJKmainfont[AutoFakeBold=4.5, Path=fonts/]{fzsong.ttf}
   \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
   \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
+  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
   \setmainfont[Path=fonts/,
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
@@ -88,7 +91,37 @@
 \fi
 \fi
 
+% https://tex.stackexchange.com/questions/180168/fontspec-xecjk-autofakebold-and-copyable-chinese-characters-in-pdf
+% value > 0
+\def\xeCJKembold{0.40}
 
+% hack into xeCJK, you don't need to understand it
+\def\saveCJKnode{\dimen255\lastkern}
+\def\restoreCJKnode{\kern-\dimen255\kern\dimen255}
+
+% save old definition of \CJKsymbol and \CJKpunctsymbol for CJK output
+\let\CJKoldsymbol\CJKsymbol
+\let\CJKoldpunctsymbol\CJKpunctsymbol
+
+% apply pdf literal fake bold
+\def\CJKfakeboldsymbol#1{%
+  \special{pdf:literal direct 2 Tr \xeCJKembold\space w}%
+  \CJKoldsymbol{#1}%
+  \saveCJKnode
+  \special{pdf:literal direct 0 Tr}%
+  \restoreCJKnode}
+\def\CJKfakeboldpunctsymbol#1{%
+  \special{pdf:literal direct 2 Tr \xeCJKembold\space w}%
+  \CJKoldpunctsymbol{#1}%
+  \saveCJKnode
+  \special{pdf:literal direct 0 Tr}%
+  \restoreCJKnode}
+\newcommand\CJKfakebold[1]{%
+  \let\CJKsymbol\CJKfakeboldsymbol
+  \let\CJKpunctsymbol\CJKfakeboldpunctsymbol
+  #1%
+  \let\CJKsymbol\CJKoldsymbol
+  \let\CJKpunctsymbol\CJKoldpunctsymbol}
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -968,10 +1001,16 @@ tabsize=4
     \includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]
   }{\includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]}
   \begin{tabular}{lp{10cm}}
-    \hspace{0.12cm}\bfseries\fontsize{18bp}{18bp}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
+    % \hspace{0.12cm}\bfseries\fontsize{18bp}{18bp}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
+    %     \centering
+    %       \bfseries\fontsize{18bp}{18bp}\selectfont
+    %       \zh@thetitle
+    % } \\
+    \hspace{0.12cm}\fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{论文题目}}} 
+    & \multirow[t]{2}{10cm}{
         \centering
-          \bfseries\fontsize{18bp}{18bp}\selectfont
-          \zh@thetitle
+          \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{
+          \zh@thetitle}}}
     } \\
     \cline{2-2}
             & \\
@@ -1043,15 +1082,16 @@ tabsize=4
   \thispagestyle{empty}
 
 
-\noindent 分类号 \hspace{0.5em}\UnderlineCentered{2.5in}{3pt}{\theClassificationNumber} 密级 \UnderlineCentered{2.5in}{3pt}{\theClassifiedClass} \\[12bp]
-UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
+\noindent 分类号 \hspace{0.53em}\UnderlineCentered{2.4in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[12bp]
+UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\selectfont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
     学\chinesespace 位\chinesespace 论\chinesespace 文
-  } \\[48bp]
+  }}} \\[48bp]
 
-  \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
+  % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
   \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[36bp]
@@ -1161,15 +1201,15 @@ School: & \en@theschool \\
   \newpage
   \thispagestyle{empty}
 
-\noindent 分类号 \hspace{0.5em}\UnderlineCentered{2.5in}{3pt}{\theClassificationNumber} 密级 \UnderlineCentered{2.5in}{3pt}{\theClassifiedClass} \\[12bp]
-UDC\textsuperscript{ 注1} \UnderlineCentered{2.5in}{3pt}{\theUDCNumber} \\[12bp]
+\noindent 分类号 \hspace{0.53em}\UnderlineCentered{2.4in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[12bp]
+UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\selectfont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
     学\chinesespace 位\chinesespace 论\chinesespace 文
-  } \\[48bp]
-
-  \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
+  }}} \\[48bp]
+  % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
+  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
   \vspace{-15pt}
   \rule{5.9in}{.5pt} \\
   \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[34bp]
