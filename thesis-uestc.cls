@@ -9,13 +9,13 @@
 \RequireXeTeX
 
 \RequirePackage{xpatch}
-\newcommand{\uestcerror}[1]{%
-  \ClassError{thesis-uestc}{#1}{}%
+\newcommand\uestcwarning[1]{%
+  \ClassWarning{thesis-uestc}{#1}%
 }
 
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage{graphicx}
-\RequirePackage[font={doublespacing, small}, labelsep=space, skip=6pt]{caption}
+\RequirePackage[font={doublespacing, small}, labelsep=space, skip=6bp]{caption}
 
 \RequirePackage{array}
 \RequirePackage{booktabs}
@@ -373,7 +373,7 @@ tabsize=4
    \else
      \addvspace\intextsep
    \fi}%
-  {}{\uestcerror{patch floating body fail}}
+  {}{\uestcwarning{patch floating body fail}}
 \patchcmd{\@addtocurcol}%
   {\vskip\intextsep \ifnum\outputpenalty <-\@Mii \vskip -\parskip\fi}%
   {\ifnum\outputpenalty <-\@Mii
@@ -382,9 +382,9 @@ tabsize=4
    \else
      \vskip\intextsep
    \fi}%
-  {}{\uestcerror{patch floating body fail}}
+  {}{\uestcwarning{patch floating body fail}}
 \patchcmd{\@getpen}{\@M}{\@Mi}
-  {}{\uestcerror{patch floating body fail}}
+  {}{\uestcwarning{patch floating body fail}}
 
 \AtBeginEnvironment{figure}{%
   \def\@floatboxreset{\centering}%
