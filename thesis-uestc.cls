@@ -56,6 +56,7 @@
 \definecolor{backgroundColor}{RGB}{249, 241, 165}
 \RequirePackage{fontspec}
 \RequirePackage{listings}
+\RequirePackage[noadjust]{cite}
 
 
 % https://tex.stackexchange.com/questions/180168/fontspec-xecjk-autofakebold-and-copyable-chinese-characters-in-pdf
@@ -1707,8 +1708,8 @@ School: & \en@theschool \\
 }{
   \popQED\endtrivlist\@endpefalse
 }
-
-\newcommand{\citing}[1]{\textsuperscript{\cite{#1}}}
+    
+\newcommand{\citing}[1]{\textsuperscript{\cite{#1}}\kern\z@}
 \setlist{noitemsep}
 \setlist{nolistsep}
 
