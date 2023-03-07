@@ -57,39 +57,6 @@
 \RequirePackage{fontspec}
 \RequirePackage{listings}
 
-\ifwindows
-  \setCJKmainfont[AutoFakeBold=4]{SimSun}
-  \newCJKfontfamily{\heiti}{SimHei}
-  \newfontfamily{\heiti@letter}{SimHei}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  % \setallmainfonts{Times New Roman}
-  \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont{Times New Roman}
-\else
-\ifmacosx
-  \setCJKmainfont[AutoFakeBold=4]{Songti SC}
-  \newCJKfontfamily{\heiti}{STHeiti}
-  \newfontfamily{\heiti@letter}{STHeiti}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  % \setallmainfonts{Times New Roman}
-  \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont{Times New Roman}
-\else
-  \setCJKmainfont[AutoFakeBold=4, Path=fonts/]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  \setmainfont[Path=fonts/,
-    BoldFont=timesbd.ttf,
-    ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf,
-  ]{times.ttf}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont[Path=fonts/]{times.ttf}
-\fi
-\fi
 
 % https://tex.stackexchange.com/questions/180168/fontspec-xecjk-autofakebold-and-copyable-chinese-characters-in-pdf
 % value > 0
@@ -122,6 +89,39 @@
   #1%
   \let\CJKsymbol\CJKoldsymbol
   \let\CJKpunctsymbol\CJKoldpunctsymbol}
+
+\newCJKfontfamily{\titlefontzh}[Path=fonts/]{STZhongsong.ttf}
+\newfontfamily{\titlefonten}[Path=fonts/]{timesbd.ttf}
+\DeclareTextFontCommand{\emph}{\CJKfakebold{\titlefontzh}\titlefonten}
+
+\ifwindows
+  \setCJKmainfont[AutoFakeBold=4]{SimSun}
+  \newCJKfontfamily{\heiti}{SimHei}
+  \newfontfamily{\heiti@letter}{SimHei}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont{Times New Roman}
+\else
+\ifmacosx
+  \setCJKmainfont[AutoFakeBold=4]{Songti SC}
+  \newCJKfontfamily{\heiti}{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont{Times New Roman}
+\else
+  \setCJKmainfont[AutoFakeBold=4, Path=fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
+  \setmainfont[Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+  ]{times.ttf}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont[Path=fonts/]{times.ttf}
+\fi
+\fi
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -1006,11 +1006,11 @@ tabsize=4
     %       \bfseries\fontsize{18bp}{18bp}\selectfont
     %       \zh@thetitle
     % } \\
-    \hspace{0.12cm}\fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{论文题目}}} 
+    \hspace{0.12cm}\fontsize{18bp}{18bp}\CJKfakebold{{\titlefontzh{论文题目}}} 
     & \multirow[t]{2}{10cm}{
         \centering
-          \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{
-          \zh@thetitle}}}
+          \fontsize{18bp}{18bp}\emph{
+          \zh@thetitle}
     } \\
     \cline{2-2}
             & \\
@@ -1086,12 +1086,12 @@ tabsize=4
 UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[0bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefontzh{
     学\chinesespace 位\chinesespace 论\chinesespace 文
   }}} \\[30bp]
 
   % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
-  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
+  \fontsize{18bp}{18bp}\emph{\zh@thetitle} \\
   \vspace{-15pt}
   \rule{6.05in}{.5pt} \\
   \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[24bp]
@@ -1205,11 +1205,11 @@ School: & \en@theschool \\
 UDC\textsuperscript{注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[0bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefontzh{
     学\chinesespace 位\chinesespace 论\chinesespace 文
   }}} \\[30bp]
   % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
-  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
+  \fontsize{18bp}{18bp}\emph{\zh@thetitle} \\
   \vspace{-15pt}
   \rule{6.05in}{.5pt} \\
   \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[24bp]
