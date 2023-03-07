@@ -57,39 +57,6 @@
 \RequirePackage{fontspec}
 \RequirePackage{listings}
 
-\ifwindows
-  \setCJKmainfont[AutoFakeBold=4.5]{SimSun}
-  \newCJKfontfamily{\heiti}{SimHei}
-  \newfontfamily{\heiti@letter}{SimHei}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  % \setallmainfonts{Times New Roman}
-  \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont{Times New Roman}
-\else
-\ifmacosx
-  \setCJKmainfont[AutoFakeBold=4.5]{Songti SC}
-  \newCJKfontfamily{\heiti}{STHeiti}
-  \newfontfamily{\heiti@letter}{STHeiti}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  % \setallmainfonts{Times New Roman}
-  \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont{Times New Roman}
-\else
-  \setCJKmainfont[AutoFakeBold=4.5, Path=fonts/]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
-  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
-  \setmainfont[Path=fonts/,
-    BoldFont=timesbd.ttf,
-    ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf,
-  ]{times.ttf}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
-  \newfontfamily\codefont[Path=fonts/]{times.ttf}
-\fi
-\fi
 
 % https://tex.stackexchange.com/questions/180168/fontspec-xecjk-autofakebold-and-copyable-chinese-characters-in-pdf
 % value > 0
@@ -122,6 +89,43 @@
   #1%
   \let\CJKsymbol\CJKoldsymbol
   \let\CJKpunctsymbol\CJKoldpunctsymbol}
+
+\newCJKfontfamily{\titlefontzh}[Path=fonts/]{STZhongsong.ttf}
+\newfontfamily{\titlefonten}[Path=fonts/]{timesbd.ttf}
+\DeclareTextFontCommand{\emph}{\CJKfakebold{\titlefontzh}\titlefonten}
+
+\ifwindows
+  \setCJKmainfont[AutoFakeBold=4]{SimSun}
+  \newCJKfontfamily{\heiti}{SimHei}
+  \newfontfamily{\heiti@letter}{SimHei}
+  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont{Times New Roman}
+\else
+\ifmacosx
+  \setCJKmainfont[AutoFakeBold=4]{Songti SC}
+  \newCJKfontfamily{\heiti}{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+  \setmainfont{Times New Roman}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont{Times New Roman}
+\else
+  \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
+  \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
+  \setmainfont[Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+  ]{times.ttf}
+  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \newfontfamily\codefont[Path=fonts/]{times.ttf}
+\fi
+\fi
+
+
 
 \lstdefinestyle{c++}{language=C++,
 basicstyle=\sffamily\codefont,
@@ -1001,16 +1005,10 @@ tabsize=4
     \includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]
   }{\includegraphics[width=180bp, height=180bp]{logo.pdf} \\[40bp]}
   \begin{tabular}{lp{10cm}}
-    % \hspace{0.12cm}\bfseries\fontsize{18bp}{18bp}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
-    %     \centering
-    %       \bfseries\fontsize{18bp}{18bp}\selectfont
-    %       \zh@thetitle
-    % } \\
-    \hspace{0.12cm}\fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{论文题目}}} 
-    & \multirow[t]{2}{10cm}{
+    \hspace{0.12cm}\bfseries\fontsize{18bp}{18bp}\selectfont 论文题目 & \multirow[t]{2}{10cm}{
         \centering
-          \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{
-          \zh@thetitle}}}
+          \bfseries\fontsize{18bp}{18bp}\selectfont
+          \zh@thetitle
     } \\
     \cline{2-2}
             & \\
@@ -1082,23 +1080,23 @@ tabsize=4
   \thispagestyle{empty}
 
 
-\noindent 分类号 \hspace{0.53em}\UnderlineCentered{2.4in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[12bp]
-UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12bp]
+\noindent 分类号 \hspace{0.68em}\UnderlineCentered{2.405in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[5bp]
+UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[0bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefontzh{
     学\chinesespace 位\chinesespace 论\chinesespace 文
-  }}} \\[48bp]
+  }}} \\[30bp]
 
   % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
-  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
+  \fontsize{18bp}{18bp}\emph{\zh@thetitle} \\
   \vspace{-15pt}
-  \rule{5.9in}{.5pt} \\
-  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[36bp]
+  \rule{6.05in}{.5pt} \\
+  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[24bp]
   \fontsize{16bp}{16bp}\selectfont{\bfseries\zh@theauthor} \\
   \vspace{-15pt}
-  \rule{1.63in}{.5pt} \\
-  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[36bp]
+  \rule{2.0in}{.5pt} \\
+  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[40bp]
 
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{16bp}{16bp}\selectfont}
@@ -1110,16 +1108,16 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
     %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     % \cline{2-2}
     & \fontsize{12bp}{12bp}\selectfont（姓名、职称、单位名称）
-  \end{tabular}  \\[36bp]
+  \end{tabular}  \\[76bp]
 \end{center}
 
   \noindent
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.0in}
+      p{1.60in}
       >{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{2.50in}}
+      p{2.12in}}
       申请学位级别 & \chinesedegreename &
       学科专业 & \zh@themajor \\
     \cline{2-2}
@@ -1127,10 +1125,10 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.59in}
+      p{1.60in}
       >{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.59in}}
+      p{1.785in}}
       提交论文日期 & \thedatesubmit &
       论文答辩日期 & \thedateoral \\
     \cline{2-2}
@@ -1138,26 +1136,26 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{4.02in}}
-      学位授予单位和日期 & 电子科技大学\chinesespace{} \thedateconfer \\
+      p{4.22in}}
+      学位授予单位和日期 & 电子科技大学 \chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{} \thedateconfer \\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{4.35in}}
+      p{4.55in}}
       答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\heiti\selectfont}
-      p{5.01in}}
+      p{5.22in}}
       评阅人 & \\
     \cline{2-2}
   \end{tabular}
 
-\vspace{0.54in}
+\vspace{0.44in}
 \noindent
-\hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
+\hspace{6bp}{\fontsize{10.5bp}{10.5bp}\selectfont 注1：注明《国际十进分类法UDC》的类号。}
 
 \newpage
 \thispagestyle{empty}\null
@@ -1201,22 +1199,22 @@ School: & \en@theschool \\
   \newpage
   \thispagestyle{empty}
 
-\noindent 分类号 \hspace{0.53em}\UnderlineCentered{2.4in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[12bp]
-UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12bp]
+\noindent 分类号 \hspace{0.68em}\UnderlineCentered{2.405in}{3pt}{\theClassificationNumber} \hspace{0.50em} 密级 \hspace{0.50em} \UnderlineCentered{2.4in}{3pt}{\theClassifiedClass} \\[5bp]
+UDC\textsuperscript{注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[0bp]
 
 \begin{center}
-  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefont{
+  \fontsize{36bp}{36bp}\CJKfakebold{{\titlefontzh{
     学\chinesespace 位\chinesespace 论\chinesespace 文
-  }}} \\[48bp]
+  }}} \\[30bp]
   % \fontsize{18bp}{18bp}\selectfont{\bfseries\zh@thetitle} \\
-  \fontsize{18bp}{18bp}\CJKfakebold{{\titlefont{\zh@thetitle}}} \\
+  \fontsize{18bp}{18bp}\emph{\zh@thetitle} \\
   \vspace{-15pt}
-  \rule{5.9in}{.5pt} \\
-  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[34bp]
+  \rule{6.05in}{.5pt} \\
+  \fontsize{12bp}{12bp}\selectfont（题名和副题名）\\[24bp]
   \fontsize{16bp}{16bp}\selectfont{\bfseries\zh@theauthor} \\
   \vspace{-15pt}
-  \rule{1.63in}{.5pt} \\
-  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[34bp]
+  \rule{2.0in}{.5pt} \\
+  \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[40bp]
 
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{16bp}{16bp}\selectfont}
@@ -1228,16 +1226,16 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
     %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     % \cline{2-2}
     & \fontsize{12bp}{12bp}\selectfont（姓名、职称、单位名称）
-  \end{tabular}  \\ [24bp]
+  \end{tabular}  \\ [76bp]
 \end{center}
 
   \noindent
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.0in}
+      p{1.60in}
       >{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{2.50in-2em}}
+      p{1.79in}}
       申请学位级别 & \chinesedegreenamelevel &
       专业学位类别 & \zh@themajor \\
     \cline{2-2}
@@ -1245,16 +1243,16 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{4.53in}}
+      p{4.72in}}
       专业学位领域 & \theProfessionalDegreeArea \\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.59in}
+      p{1.60in}
       >{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{1.59in}}
+      p{1.785in}}
       提交论文日期 & \thedatesubmit &
       论文答辩日期 & \thedateoral \\
     \cline{2-2}
@@ -1262,26 +1260,26 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[12b
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{4.02in}}
-      学位授予单位和日期 & 电子科技大学\chinesespace{} \thedateconfer \\
+      p{4.22in}}
+      学位授予单位和日期 & 电子科技大学 \chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{}\chinesespace{} \thedateconfer \\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\arraybackslash\fontsize{14bp}{14bp}\bfseries\selectfont}
-      p{4.35in}}
+      p{4.55in}}
       答辩委员会主席 & \theChairman\\
     \cline{2-2}
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{14bp}{14bp}\heiti\selectfont}
-      p{5.01in}}
+      p{5.22in}}
       评阅人 & \\
     \cline{2-2}
   \end{tabular}
 
-\vspace{0.54in}
+\vspace{0.44in}
 \noindent
-\hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
+\hspace{6bp}{\fontsize{10.5bp}{10.5bp}\selectfont 注1：注明《国际十进分类法UDC》的类号。}
 
 \newpage
 \thispagestyle{empty}\null
