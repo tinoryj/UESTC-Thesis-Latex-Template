@@ -101,7 +101,8 @@
   \newfontfamily{\heiti@letter}{SimHei}
   \newCJKfontfamily{\titlefont}[Path=fonts/]{STZhongsong.ttf}
   \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  % \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \setmathfont{Times New Roman}
   \newfontfamily\codefont{Times New Roman}
 \else
 \ifmacosx
@@ -109,7 +110,8 @@
   \newCJKfontfamily{\heiti}{STHeiti}
   \newfontfamily{\heiti@letter}{STHeiti}
   \setmainfont{Times New Roman}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  % \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \setmathfont{Times New Roman}
   \newfontfamily\codefont{Times New Roman}
 \else
   \setCJKmainfont[AutoFakeBold=true, Path=fonts/]{fzsong.ttf}
@@ -121,7 +123,8 @@
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
   ]{times.ttf}
-  \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  % \setmathfont[Path=./fonts/]{latinmodern-math.otf}
+  \setmathfont[Path=fonts/]{times.ttf}
   \newfontfamily\codefont[Path=fonts/]{times.ttf}
 \fi
 \fi
