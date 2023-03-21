@@ -107,8 +107,10 @@
 \else
 \ifmacosx
   \setCJKmainfont[AutoFakeBold=4]{Songti SC}
-  \newCJKfontfamily{\heiti}{STHeiti}
-  \newfontfamily{\heiti@letter}{STHeiti}
+  % \newCJKfontfamily{\heiti}{STHeiti}
+  % \newfontfamily{\heiti@letter}{STHeiti}
+  \newCJKfontfamily{\heiti}[Path=fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}[Path=fonts/]{fzhei.ttf}
   \setmainfont{Times New Roman}
   % \setmathfont[Path=./fonts/]{latinmodern-math.otf}
   \setmathfont{Times New Roman}
