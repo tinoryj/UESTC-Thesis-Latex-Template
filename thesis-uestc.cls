@@ -58,7 +58,6 @@
 \RequirePackage{listings}
 \RequirePackage[noadjust]{cite}
 
-
 % https://tex.stackexchange.com/questions/180168/fontspec-xecjk-autofakebold-and-copyable-chinese-characters-in-pdf
 % value > 0
 \def\xeCJKembold{0.40}
@@ -1104,17 +1103,18 @@ UDC\textsuperscript{ 注1} \UnderlineCentered{2.41in}{3pt}{\theUDCNumber} \\[0bp
   \rule{2.0in}{.5pt} \\
   \fontsize{12bp}{12bp}\selectfont（作者姓名） \\[40bp]
 
+  \hspace{-2em}
   \begin{tabular}{>{\fontsize{12bp}{12bp}\selectfont}l
       >{\centering\arraybackslash\fontsize{16bp}{16bp}\selectfont}
-      p{4.45in}}
+      p{9.8cm}}
       指导教师 & {\bfseries\zh@theadvisor} \\
     \cline{2-2}
-      & {\bfseries 电子科技大学\chinesespace 成都} \\
+      & {\bfseries 电子科技大学 \qquad 成\chinesespace 都} \\
     \cline{2-2}
     %   合作导师 & {\bfseries\zh@thecoadvisor} \\
     % \cline{2-2}
-    & \fontsize{12bp}{12bp}\selectfont（姓名、职称、单位名称）
-  \end{tabular}  \\[76bp]
+    & \fontsize{12bp}{12bp}\selectfont{\hspace*{-2.5em}（姓名、职称、单位名称）}
+  \end{tabular} \\[76bp]
 \end{center}
 
   \noindent

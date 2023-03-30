@@ -5,7 +5,7 @@
 \setdate[submit]{2022年3月17日} % 论文提交日期，可留空
 \setdate[oral]{2022年4月15日}  % 答辩日期，可留空
 \setdate[confer]{2022年6月} % 学位授予日期，可留空
-\advisor{导师姓名\chinesespace 导师职称}{English name English title}
+\advisor{\qquad 张三\qquad\qquad 教\chinesespace 授}{English name English title}
 % \coAdvisor{合作导师姓名\chinesespace 导师职称}{Co advisor English name English title} % 仅专业硕士/博士使用，在扉页/英文首页添加合作导师，不使用请注释
 \school{计算机科学与工程学院(网络空间安全学院)}{School of Computer Science and Engineering(School of Cyberspace Security)} % 学院信息
 \major{计算机科学与技术}{Computer Science and Technology} % 专业信息
@@ -27,6 +27,7 @@
 \newglossaryentry{tree}{name={tree}, description={trees are the better humans}}  % 定义符号:以本项为例,name={tree}为符号名称;tree用于文内引用; description={trees are the better humans}为显示的描述。页码自动添加。
 
 \begin{document}
+
 \makecover % 封面+中英文扉页
 \originalitydeclaration % 原创新声明
 % \signatureofdeclaration{signature.pdf} % 用于添加扫描版签字后的原创新声明（使用时取消注释本行，并注释掉上一行）
@@ -53,9 +54,9 @@
 
 角标参考文献\citing{chen2001hao}测试，普通参考文献~\cite{clerc2010discrete}。
 
-这是符号\gls{tree}。
+这是符号\gls{tree}\cite{liuxf2006}。
 
-$\hat{H}$, $\vec{V}$
+$\hat{H}, f(x)$, $\vec{V}$
 
 $$\hat{H}$$
 
