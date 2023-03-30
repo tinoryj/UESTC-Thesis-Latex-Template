@@ -591,6 +591,7 @@ tabsize=4
   \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
 }}
 
+\renewcommand{\cftdot}{\raisebox{0.6ex}{\textnormal{.}}}
 \tocloftpagestyle{fancy}
 \renewcommand{\cftchappagefont}{\normalfont}
 \renewcommand\cftchapleader{\cftdotfill{\cftdotsep}}
