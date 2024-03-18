@@ -4,6 +4,7 @@ sub_modules/
 main.synctex(busy)
 bf.pdf
 *.tmp
+*._wordcount_selection.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
