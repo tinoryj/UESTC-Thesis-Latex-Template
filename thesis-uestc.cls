@@ -41,7 +41,6 @@
 \RequirePackage{xspace}
 \RequirePackage{algpseudocode}
 \RequirePackage{makecell}
-\RequirePackage{xcolor}
 \RequirePackage{ifplatform}
 % Listing lstlisting -------
 \definecolor{commentColor}{RGB}{53,129,34}

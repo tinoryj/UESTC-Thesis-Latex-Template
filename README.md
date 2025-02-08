@@ -218,13 +218,36 @@ sudo apt install xxx
   \newCJKfontfamily{\heiti}{STHeiti}
   \newfontfamily{\heiti@letter}{STHeiti}
 ```
+
 改为
+
 ```tex
   \def\WordPath{/Applications/Microsoft Word.app/Contents/Resources/DFonts/}
   \setCJKmainfont[AutoFakeBold=true,Path=\WordPath]{SimSun.ttf}
   \newCJKfontfamily{\heiti}[Path=\WordPath]{SimHei.ttf}
   \newfontfamily{\heiti@letter}[Path=\WordPath]{SimHei.ttf}
 ```
+
+### 设置列表锁进格式
+
+默认情况下，列表项正文如果较长，列表项的内容将与第一行保持一致的缩进，例如：
+
+```tex
+\begin{enumerate}
+\item 列表项短文本
+\item 列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本
+\end{enumerate}
+```
+
+使用itemize或enumerate环境时，加上[wide]选项就可以解决这个问题，并且使用enumerate环境创建的列表中的项同样会自动编号，例如：
+
+```tex
+\begin{enumerate}[wide]
+\item 列表项短文本
+\item 列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本列表项长文本
+\end{enumerate}
+```
+
 ## 常见问题
 
 1. 需要更多层级的目录：[Issue 25](https://github.com/tinoryj/UESTC-Thesis-Latex-Template/issues/25)
