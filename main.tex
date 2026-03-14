@@ -115,6 +115,69 @@ $\mathcal{C}_i$
     \label{fig:1}
 \end{figure}
 
+\begin{table}[!htbp]
+    \caption{三线表示例}
+    \label{tab:three-line-example}
+    \setlength{\tabcolsep}{5pt}
+    \begin{tabular}{@{}C{1.9cm}C{2.5cm}C{2.3cm}C{4.0cm}@{}}
+        \toprule
+        测试编号 & 参数设置 & 实验结果 & 说明 \\
+        \midrule
+        1 & 默认参数 & 92.4\% & 基线结果 \\
+        2 & 增大批大小 & 93.1\% & 使用辅助线区分组别 \\
+        \cmidrule(lr){1-4}
+        3 & 引入正则项 & 94.0\% & 结果最优 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\clearpage
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}C{1.4cm}L{2.3cm}C{1.8cm}L{7.0cm}@{}}
+    \caption{longtable 示例}\label{tab:longtable-example}\\
+    \toprule
+    序号 & 模块名称 & 状态 & 说明 \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{4}{c}{\tablename\ \thetable\ longtable 示例（续）}\\
+    \toprule
+    序号 & 模块名称 & 状态 & 说明 \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{4}{r}{续下页}\\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    1 & 数据采集模块 & 已完成 & 完成原始数据清洗与格式统一。\\
+    2 & 特征提取模块 & 已完成 & 对时域与频域特征进行联合编码。\\
+    3 & 训练配置模块 & 已完成 & 支持批大小、学习率和轮数配置。\\
+    4 & 模型管理模块 & 已完成 & 支持模型保存、加载与版本管理。\\
+    5 & 推理服务模块 & 已完成 & 提供统一接口供前端调用。\\
+    6 & 指标统计模块 & 已完成 & 汇总准确率、召回率与 F1 值。\\
+    7 & 消融实验模块 & 进行中 & 验证不同损失函数的影响。\\
+    8 & 对比实验模块 & 进行中 & 与传统方法和深度方法进行对比。\\
+    9 & 可视化分析模块 & 已完成 & 生成训练曲线与混淆矩阵图。\\
+    10 & 参数敏感性分析 & 已完成 & 分析关键超参数变化带来的波动。\\
+    11 & 错误样本回溯模块 & 已完成 & 定位误判样本并输出诊断信息。\\
+    12 & 数据增强模块 & 已完成 & 使用旋转、裁剪与噪声扰动扩充样本。\\
+    13 & 部署脚本模块 & 已完成 & 自动化完成环境初始化与部署。\\
+    14 & 日志管理模块 & 已完成 & 记录训练、评估与推理日志。\\
+    15 & 异常恢复模块 & 已完成 & 断点续训与异常退出后可恢复。\\
+    16 & 资源监控模块 & 已完成 & 监控 GPU、显存与运行时延迟。\\
+    17 & 数据版本模块 & 已完成 & 记录数据集版本与标注变更。\\
+    18 & 论文图表生成模块 & 已完成 & 自动导出论文中使用的图表。\\
+    19 & 附录材料整理模块 & 已完成 & 汇总补充实验与额外结果。\\
+    20 & 最终答辩材料模块 & 进行中 & 正在整理展示页与演示脚本。\\
+\end{longtable}
+
 
 \chapter{相关研究基础}
 \chapter{工作内容xxx}

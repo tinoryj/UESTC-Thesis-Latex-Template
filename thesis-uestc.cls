@@ -19,10 +19,21 @@
 
 \RequirePackage{array}
 \RequirePackage{booktabs}
-\setlength{\heavyrulewidth}{0.9pt}
-\setlength{\lightrulewidth}{0.5pt}
-\setlength{\arrayrulewidth}{0.5pt}
-\setlength{\cmidrulewidth}{0.5pt}
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\lightrulewidth}{0.75pt}
+\setlength{\arrayrulewidth}{0.75pt}
+\setlength{\cmidrulewidth}{0.75pt}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+\newcommand{\uestctablefont}{\fontsize{10.5bp}{10.5bp}\selectfont}
+\newcommand{\uestctablestyle}{%
+  \uestctablefont
+  \setstretch{1}%
+  \renewcommand{\arraystretch}{1.4}%
+  \setlength{\extrarowheight}{0pt}%
+}
+\newif\ifuestcintable
 
 \RequirePackage{setspace}
 \RequirePackage{adjustbox}
@@ -432,10 +443,34 @@ tabsize=4
 }
 
 \AtBeginEnvironment{table}{%
+  \uestcintabletrue
   \def\@floatboxreset{\centering}%
 }
 
-\AtBeginEnvironment{tabular}{\small}
+\AtEndEnvironment{table}{%
+  \uestcintablefalse
+}
+
+\AtBeginEnvironment{table*}{%
+  \uestcintabletrue
+  \def\@floatboxreset{\centering}%
+}
+
+\AtEndEnvironment{table*}{%
+  \uestcintablefalse
+}
+
+\AtBeginEnvironment{tabular}{%
+  \ifuestcintable
+    \uestctablestyle
+  \else
+    \small
+  \fi
+}
+
+\AtBeginEnvironment{longtable}{%
+  \uestctablestyle
+}
 
 \newcommand{\chinesecolon}{\char"FF1A}
 \newcommand{\chinesespace}{\char"3000}
